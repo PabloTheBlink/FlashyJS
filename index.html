@@ -17,7 +17,10 @@
         },
       };
     </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
     <style>
@@ -29,6 +32,55 @@
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+
+      /* Navbar scroll effects */
+      .navbar-scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-scrolled .nav-link {
+        color: #374151;
+      }
+
+      .navbar-scrolled .nav-link:hover {
+        color: #6366f1;
+      }
+
+      .navbar-scrolled .logo-text {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .navbar-scrolled .mobile-menu-button {
+        color: #374151;
+      }
+
+      .navbar-scrolled .mobile-menu-button:hover {
+        color: #6366f1;
+      }
+
+      /* Initial navbar state */
+      .navbar-initial .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .navbar-initial .nav-link:hover {
+        color: white;
+      }
+
+      .navbar-initial .mobile-menu-button {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .navbar-initial .mobile-menu-button:hover {
+        color: white;
+      }
+
       .code-block {
         background: #1a1a1a;
         border-radius: 12px;
@@ -42,7 +94,16 @@
         padding: 1rem;
       }
       .hero-pattern {
-        background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.1) 2px, transparent 0);
+        background-image: radial-gradient(
+            circle at 25px 25px,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 0
+          ),
+          radial-gradient(
+            circle at 75px 75px,
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 0
+          );
         background-size: 100px 100px;
       }
       .floating {
@@ -110,34 +171,127 @@
   </head>
   <body class="bg-gray-50 text-gray-900">
     <!-- Header/Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
+    <nav
+      id="navbar"
+      class="fixed top-0 w-full z-50 glass-effect navbar-initial transition-all duration-300"
+      role="navigation"
+      aria-label="Navegación principal"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+            <div
+              class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center"
+              aria-hidden="true"
+            >
               <span class="text-white font-bold text-sm">F</span>
             </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Flashy.js</span>
+            <span
+              class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent logo-text"
+              >Flashy.js</span
+            >
           </div>
-          <div class="desktop-menu hidden md:flex space-x-8">
-            <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a>
-            <a href="#instalacion" class="text-gray-600 hover:text-primary transition-colors">Instalación</a>
-            <a href="#ejemplos" class="text-gray-600 hover:text-primary transition-colors">Ejemplos</a>
-            <a href="#api" class="text-gray-600 hover:text-primary transition-colors">API</a>
-            <a href="#generador" class="text-gray-600 hover:text-primary transition-colors">Generador</a>
+          <div class="desktop-menu hidden md:flex space-x-8" role="menubar">
+            <a
+              href="#inicio"
+              class="nav-link transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              role="menuitem"
+              aria-label="Ir a la sección de inicio"
+              >Inicio</a
+            >
+            <a
+              href="#instalacion"
+              class="nav-link transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              role="menuitem"
+              aria-label="Ir a la sección de instalación"
+              >Instalación</a
+            >
+            <a
+              href="#ejemplos"
+              class="nav-link transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              role="menuitem"
+              aria-label="Ir a la sección de ejemplos"
+              >Ejemplos</a
+            >
+            <a
+              href="#api"
+              class="nav-link transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              role="menuitem"
+              aria-label="Ir a la sección de API"
+              >API</a
+            >
+            <a
+              href="#generador"
+              class="nav-link transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              role="menuitem"
+              aria-label="Ir a la sección del generador"
+              >Generador</a
+            >
           </div>
           <div class="mobile-menu md:hidden">
-            <button id="mobile-menu-toggle" class="text-gray-600 hover:text-primary">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <button
+              id="mobile-menu-toggle"
+              class="mobile-menu-button transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md p-1"
+              aria-expanded="false"
+              aria-controls="mobile-menu-items"
+              aria-label="Abrir menú de navegación"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
             </button>
-            <div id="mobile-menu-items" class="mobile-menu-items">
-              <a href="#inicio" class="text-gray-600 hover:text-primary py-2">Inicio</a>
-              <a href="#instalacion" class="text-gray-600 hover:text-primary py-2">Instalación</a>
-              <a href="#ejemplos" class="text-gray-600 hover:text-primary py-2">Ejemplos</a>
-              <a href="#api" class="text-gray-600 hover:text-primary py-2">API</a>
-              <a href="#generador" class="text-gray-600 hover:text-primary py-2">Generador</a>
+            <div
+              id="mobile-menu-items"
+              class="mobile-menu-items"
+              role="menu"
+              aria-labelledby="mobile-menu-toggle"
+            >
+              <a
+                href="#inicio"
+                class="text-gray-600 hover:text-primary py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                role="menuitem"
+                aria-label="Ir a la sección de inicio"
+                >Inicio</a
+              >
+              <a
+                href="#instalacion"
+                class="text-gray-600 hover:text-primary py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                role="menuitem"
+                aria-label="Ir a la sección de instalación"
+                >Instalación</a
+              >
+              <a
+                href="#ejemplos"
+                class="text-gray-600 hover:text-primary py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                role="menuitem"
+                aria-label="Ir a la sección de ejemplos"
+                >Ejemplos</a
+              >
+              <a
+                href="#api"
+                class="text-gray-600 hover:text-primary py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                role="menuitem"
+                aria-label="Ir a la sección de API"
+                >API</a
+              >
+              <a
+                href="#generador"
+                class="text-gray-600 hover:text-primary py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                role="menuitem"
+                aria-label="Ir a la sección del generador"
+                >Generador</a
+              >
             </div>
           </div>
         </div>
@@ -145,19 +299,41 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-40 pb-16 gradient-bg hero-pattern text-white bg-primary/50">
+    <section
+      id="inicio"
+      class="pt-40 pb-16 gradient-bg hero-pattern text-white bg-primary/50"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <div class="floating">
-            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8">
+            <div
+              class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8"
+            >
               <span class="text-4xl">🎉</span>
             </div>
           </div>
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in">Flashy<span class="text-yellow-3">.js</span></h1>
-          <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto fade-in">La librería de notificaciones más elegante y fácil de usar para JavaScript. Sin dependencias, completamente personalizable y lista para producción.</p>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in">
+            Flashy<span class="text-yellow-3">.js</span>
+          </h1>
+          <p
+            class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto fade-in"
+          >
+            La librería de notificaciones más elegante y fácil de usar para
+            JavaScript. Sin dependencias, completamente personalizable y lista
+            para producción.
+          </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
-            <button onclick="demoNotification('success', '¡Bienvenido a Flashy.js!')" class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Ver Demo</button>
-            <a href="#instalacion" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors">Comenzar</a>
+            <button
+              onclick="demoNotification('success', '¡Bienvenido a Flashy.js!')"
+              class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Ver Demo
+            </button>
+            <a
+              href="#instalacion"
+              class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
+              >Comenzar</a
+            >
           </div>
         </div>
       </div>
@@ -168,25 +344,44 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">¿Por qué elegir Flashy.js?</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">Diseñado para desarrolladores que buscan simplicidad sin sacrificar funcionalidad</p>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Diseñado para desarrolladores que buscan simplicidad sin sacrificar
+            funcionalidad
+          </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <div
+            class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
               <span class="text-white text-xl">⚡</span>
             </div>
             <h3 class="text-xl font-semibold mb-2">Ultra Ligero</h3>
-            <p class="text-gray-600">Solo ~8KB minificado. Sin dependencias externas.</p>
+            <p class="text-gray-600">
+              Solo ~8KB minificado. Sin dependencias externas.
+            </p>
           </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <div
+            class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
               <span class="text-white text-xl">🎨</span>
             </div>
             <h3 class="text-xl font-semibold mb-2">Personalizable</h3>
-            <p class="text-gray-600">Temas, posiciones, animaciones y mucho más.</p>
+            <p class="text-gray-600">
+              Temas, posiciones, animaciones y mucho más.
+            </p>
           </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <div
+            class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
               <span class="text-white text-xl">📱</span>
             </div>
             <h3 class="text-xl font-semibold mb-2">Responsive</h3>
@@ -201,13 +396,20 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">Instalación</h2>
-          <p class="text-gray-600">Múltiples formas de integrar Flashy.js en tu proyecto</p>
+          <p class="text-gray-600">
+            Múltiples formas de integrar Flashy.js en tu proyecto
+          </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- CDN -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-red-500 rounded mr-2 flex items-center justify-center text-white text-xs">1</span>
+              <span
+                class="w-6 h-6 bg-red-500 rounded mr-2 flex items-center justify-center text-white text-xs"
+                >1</span
+              >
               Via CDN
             </h3>
             <div class="code-block">
@@ -219,9 +421,14 @@
             </div>
           </div>
           <!-- NPM -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-green-500 rounded mr-2 flex items-center justify-center text-white text-xs">2</span>
+              <span
+                class="w-6 h-6 bg-green-500 rounded mr-2 flex items-center justify-center text-white text-xs"
+                >2</span
+              >
               Via NPM
             </h3>
             <div class="code-block">
@@ -233,13 +440,25 @@ flashy('¡Hola mundo!', 'success');</code></pre>
             </div>
           </div>
           <!-- Download -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-blue-500 rounded mr-2 flex items-center justify-center text-white text-xs">3</span>
+              <span
+                class="w-6 h-6 bg-blue-500 rounded mr-2 flex items-center justify-center text-white text-xs"
+                >3</span
+              >
               Descarga
             </h3>
-            <p class="text-gray-600 mb-4">Descarga el archivo y úsalo localmente</p>
-            <button onclick="window.location.href='https://github.com/pablotheblink/FlashyJS/releases/download/v1.0.0/flashy.js'" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Descargar v1.0.0</button>
+            <p class="text-gray-600 mb-4">
+              Descarga el archivo y úsalo localmente
+            </p>
+            <button
+              onclick="window.location.href='https://github.com/pablotheblink/FlashyJS/releases/download/v1.0.0/flashy.js'"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Descargar v1.0.0
+            </button>
           </div>
         </div>
       </div>
@@ -255,12 +474,39 @@ flashy('¡Hola mundo!', 'success');</code></pre>
         <!-- Types Demo -->
         <div class="mb-12">
           <h3 class="text-2xl font-semibold mb-6">Tipos de Notificación</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
-            <button onclick="demoNotification('success', '¡Operación exitosa!')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors">Success</button>
-            <button onclick="demoNotification('error', 'Algo salió mal')" class="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg transition-colors">Error</button>
-            <button onclick="demoNotification('warning', 'Ten cuidado')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 rounded-lg transition-colors">Warning</button>
-            <button onclick="demoNotification('info', 'Información útil')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors">Info</button>
-            <button onclick="demoNotification('default', 'Mensaje general')" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors">Default</button>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8"
+          >
+            <button
+              onclick="demoNotification('success', '¡Operación exitosa!')"
+              class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Success
+            </button>
+            <button
+              onclick="demoNotification('error', 'Algo salió mal')"
+              class="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Error
+            </button>
+            <button
+              onclick="demoNotification('warning', 'Ten cuidado')"
+              class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Warning
+            </button>
+            <button
+              onclick="demoNotification('info', 'Información útil')"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Info
+            </button>
+            <button
+              onclick="demoNotification('default', 'Mensaje general')"
+              class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Default
+            </button>
           </div>
           <div class="code-block">
             <pre><code class="language-javascript">// Diferentes formas de usar los tipos
@@ -278,12 +524,42 @@ flashy('Mensaje', { type: 'error' });</code></pre>
         <div class="mb-12">
           <h3 class="text-2xl font-semibold mb-6">Posiciones</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-            <button onclick="demoPosition('top-left')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Left</button>
-            <button onclick="demoPosition('top-center')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Center</button>
-            <button onclick="demoPosition('top-right')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Right</button>
-            <button onclick="demoPosition('bottom-left')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Left</button>
-            <button onclick="demoPosition('bottom-center')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Center</button>
-            <button onclick="demoPosition('bottom-right')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Right</button>
+            <button
+              onclick="demoPosition('top-left')"
+              class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Top Left
+            </button>
+            <button
+              onclick="demoPosition('top-center')"
+              class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Top Center
+            </button>
+            <button
+              onclick="demoPosition('top-right')"
+              class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Top Right
+            </button>
+            <button
+              onclick="demoPosition('bottom-left')"
+              class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Bottom Left
+            </button>
+            <button
+              onclick="demoPosition('bottom-center')"
+              class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Bottom Center
+            </button>
+            <button
+              onclick="demoPosition('bottom-right')"
+              class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Bottom Right
+            </button>
           </div>
           <div class="code-block">
             <pre><code class="language-javascript">flashy('Mensaje', { 
@@ -295,10 +571,30 @@ flashy('Mensaje', { type: 'error' });</code></pre>
         <div class="mb-12">
           <h3 class="text-2xl font-semibold mb-6">Animaciones</h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            <button onclick="demoAnimation('slide')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Slide</button>
-            <button onclick="demoAnimation('fade')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Fade</button>
-            <button onclick="demoAnimation('bounce')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Bounce</button>
-            <button onclick="demoAnimation('zoom')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Zoom</button>
+            <button
+              onclick="demoAnimation('slide')"
+              class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Slide
+            </button>
+            <button
+              onclick="demoAnimation('fade')"
+              class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Fade
+            </button>
+            <button
+              onclick="demoAnimation('bounce')"
+              class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Bounce
+            </button>
+            <button
+              onclick="demoAnimation('zoom')"
+              class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Zoom
+            </button>
           </div>
           <div class="code-block">
             <pre><code class="language-javascript">flashy('Mensaje', { 
@@ -310,8 +606,18 @@ flashy('Mensaje', { type: 'error' });</code></pre>
         <div class="mb-12">
           <h3 class="text-2xl font-semibold mb-6">Temas</h3>
           <div class="grid grid-cols-2 gap-4 mb-8">
-            <button onclick="demoTheme('light')" class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-3 rounded-lg transition-colors">Light Theme</button>
-            <button onclick="demoTheme('dark')" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg transition-colors">Dark Theme</button>
+            <button
+              onclick="demoTheme('light')"
+              class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-3 rounded-lg transition-colors"
+            >
+              Light Theme
+            </button>
+            <button
+              onclick="demoTheme('dark')"
+              class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              Dark Theme
+            </button>
           </div>
           <div class="code-block">
             <pre><code class="language-javascript">flashy('Mensaje', { 
@@ -339,12 +645,16 @@ flashy('Mensaje', { type: 'error' });</code></pre>
                 <div class="border-l-4 border-blue-500 pl-4">
                   <code class="text-blue-600 font-mono">message</code>
                   <span class="text-gray-500 ml-2">(string)</span>
-                  <p class="text-sm text-gray-600 mt-1">El texto de la notificación</p>
+                  <p class="text-sm text-gray-600 mt-1">
+                    El texto de la notificación
+                  </p>
                 </div>
                 <div class="border-l-4 border-green-500 pl-4">
                   <code class="text-green-600 font-mono">options</code>
                   <span class="text-gray-500 ml-2">(object|string)</span>
-                  <p class="text-sm text-gray-600 mt-1">Configuración o tipo de notificación</p>
+                  <p class="text-sm text-gray-600 mt-1">
+                    Configuración o tipo de notificación
+                  </p>
                 </div>
               </div>
             </div>
@@ -352,7 +662,9 @@ flashy('Mensaje', { type: 'error' });</code></pre>
               <h4 class="text-lg font-semibold mb-4">Valor de retorno</h4>
               <div class="border-l-4 border-purple-500 pl-4">
                 <code class="text-purple-600 font-mono">function</code>
-                <p class="text-sm text-gray-600 mt-1">Función para cerrar la notificación manualmente</p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Función para cerrar la notificación manualmente
+                </p>
               </div>
             </div>
           </div>
@@ -372,55 +684,76 @@ flashy('Mensaje', { type: 'error' });</code></pre>
               </thead>
               <tbody class="text-sm">
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">type</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">type</code>
+                  </td>
                   <td class="py-3 pr-4">string</td>
                   <td class="py-3 pr-4">'default'</td>
                   <td class="py-3">success, error, warning, info, default</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">position</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">position</code>
+                  </td>
                   <td class="py-3 pr-4">string</td>
                   <td class="py-3 pr-4">'top-right'</td>
-                  <td class="py-3">top-left, top-center, top-right, bottom-left, bottom-center, bottom-right</td>
+                  <td class="py-3">
+                    top-left, top-center, top-right, bottom-left, bottom-center,
+                    bottom-right
+                  </td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">duration</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">duration</code>
+                  </td>
                   <td class="py-3 pr-4">number</td>
                   <td class="py-3 pr-4">4000</td>
                   <td class="py-3">Duración en ms (0 = permanente)</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">closable</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">closable</code>
+                  </td>
                   <td class="py-3 pr-4">boolean</td>
                   <td class="py-3 pr-4">true</td>
                   <td class="py-3">Mostrar botón de cerrar</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">animation</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">animation</code>
+                  </td>
                   <td class="py-3 pr-4">string</td>
                   <td class="py-3 pr-4">'slide'</td>
                   <td class="py-3">slide, fade, bounce, zoom</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">theme</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">theme</code>
+                  </td>
                   <td class="py-3 pr-4">string</td>
                   <td class="py-3 pr-4">'light'</td>
                   <td class="py-3">light, dark</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">icon</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">icon</code>
+                  </td>
                   <td class="py-3 pr-4">string</td>
                   <td class="py-3 pr-4">null</td>
                   <td class="py-3">Icono personalizado (HTML/emoji)</td>
                 </tr>
                 <tr class="border-b border-gray-100">
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">onClick</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">onClick</code>
+                  </td>
                   <td class="py-3 pr-4">function</td>
                   <td class="py-3 pr-4">null</td>
                   <td class="py-3">Callback al hacer clic</td>
                 </tr>
                 <tr>
-                  <td class="py-3 pr-4"><code class="bg-gray-100 px-2 py-1 rounded">onClose</code></td>
+                  <td class="py-3 pr-4">
+                    <code class="bg-gray-100 px-2 py-1 rounded">onClose</code>
+                  </td>
                   <td class="py-3 pr-4">function</td>
                   <td class="py-3 pr-4">null</td>
                   <td class="py-3">Callback al cerrar</td>
@@ -485,7 +818,9 @@ flashy.destroy();</code></pre>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">Generador de Código</h2>
-          <p class="text-gray-600">Configura tu notificación y obtén el código listo para usar</p>
+          <p class="text-gray-600">
+            Configura tu notificación y obtén el código listo para usar
+          </p>
         </div>
         <div class="bg-gray-50 rounded-xl p-4 sm:p-6">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -494,12 +829,20 @@ flashy.destroy();</code></pre>
               <h3 class="text-xl font-semibold mb-4">Configuración</h3>
               <div class="mb-4">
                 <label class="block text-sm font-medium mb-2">Mensaje</label>
-                <input type="text" id="gen-message" value="¡Tu notificación personalizada!" class="w-full px-4 py-2 border border-gray-300 rounded-lg" />
+                <input
+                  type="text"
+                  id="gen-message"
+                  value="¡Tu notificación personalizada!"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                />
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label class="block text-sm font-medium mb-2">Tipo</label>
-                  <select id="gen-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                  <select
+                    id="gen-type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                  >
                     <option value="default">Default</option>
                     <option value="success">Success</option>
                     <option value="error">Error</option>
@@ -509,7 +852,10 @@ flashy.destroy();</code></pre>
                 </div>
                 <div>
                   <label class="block text-sm font-medium mb-2">Posición</label>
-                  <select id="gen-position" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                  <select
+                    id="gen-position"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                  >
                     <option value="top-right">Top Right</option>
                     <option value="top-left">Top Left</option>
                     <option value="top-center">Top Center</option>
@@ -521,8 +867,13 @@ flashy.destroy();</code></pre>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label class="block text-sm font-medium mb-2">Animación</label>
-                  <select id="gen-animation" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                  <label class="block text-sm font-medium mb-2"
+                    >Animación</label
+                  >
+                  <select
+                    id="gen-animation"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                  >
                     <option value="slide">Slide</option>
                     <option value="fade">Fade</option>
                     <option value="bounce">Bounce</option>
@@ -531,30 +882,64 @@ flashy.destroy();</code></pre>
                 </div>
                 <div>
                   <label class="block text-sm font-medium mb-2">Tema</label>
-                  <select id="gen-theme" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                  <select
+                    id="gen-theme"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                  >
                     <option value="light">Light</option>
                     <option value="dark">Dark</option>
                   </select>
                 </div>
               </div>
               <div class="mb-4">
-                <label class="block text-sm font-medium mb-2">Duración (ms)</label>
-                <input type="number" id="gen-duration" value="4000" min="0" step="100" class="w-full px-4 py-2 border border-gray-300 rounded-lg" />
+                <label class="block text-sm font-medium mb-2"
+                  >Duración (ms)</label
+                >
+                <input
+                  type="number"
+                  id="gen-duration"
+                  value="4000"
+                  min="0"
+                  step="100"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                />
                 <p class="text-xs text-gray-500 mt-1">0 = permanente</p>
               </div>
               <div class="mb-4">
-                <label class="block text-sm font-medium mb-2">Icono personalizado</label>
-                <input type="text" id="gen-icon" placeholder="🎉 o <i class='fa fa-star'></i>" class="w-full px-4 py-2 border border-gray-300 rounded-lg" />
+                <label class="block text-sm font-medium mb-2"
+                  >Icono personalizado</label
+                >
+                <input
+                  type="text"
+                  id="gen-icon"
+                  placeholder="🎉 o <i class='fa fa-star'></i>"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                />
               </div>
               <div class="mb-4">
                 <label class="flex items-center">
-                  <input type="checkbox" id="gen-closable" checked class="mr-2" />
+                  <input
+                    type="checkbox"
+                    id="gen-closable"
+                    checked
+                    class="mr-2"
+                  />
                   <span class="text-sm">Botón de cerrar</span>
                 </label>
               </div>
               <div class="flex flex-col sm:flex-row gap-2">
-                <button onclick="generateCode()" class="w-full sm:w-auto bg-primary text-white px-6 py-2 rounded-lg">Generar Código</button>
-                <button onclick="previewNotification()" class="w-full sm:w-auto bg-secondary text-white px-6 py-2 rounded-lg">Vista Previa</button>
+                <button
+                  onclick="generateCode()"
+                  class="w-full sm:w-auto bg-primary text-white px-6 py-2 rounded-lg"
+                >
+                  Generar Código
+                </button>
+                <button
+                  onclick="previewNotification()"
+                  class="w-full sm:w-auto bg-secondary text-white px-6 py-2 rounded-lg"
+                >
+                  Vista Previa
+                </button>
               </div>
             </div>
             <!-- Generated Code -->
@@ -562,14 +947,23 @@ flashy.destroy();</code></pre>
               <h3 class="text-xl font-semibold mb-4">Código Generado</h3>
               <div class="space-y-4">
                 <div>
-                  <label class="block text-sm font-medium mb-2">Método básico</label>
+                  <label class="block text-sm font-medium mb-2"
+                    >Método básico</label
+                  >
                   <div class="code-block">
                     <pre><code id="generated-code-basic" class="language-javascript">flashy('¡Tu notificación personalizada!', 'success');</code></pre>
                   </div>
-                  <button onclick="copyCode('generated-code-basic')" class="mt-2 text-sm text-primary">📋 Copiar código</button>
+                  <button
+                    onclick="copyCode('generated-code-basic')"
+                    class="mt-2 text-sm text-primary"
+                  >
+                    📋 Copiar código
+                  </button>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium mb-2">Configuración completa</label>
+                  <label class="block text-sm font-medium mb-2"
+                    >Configuración completa</label
+                  >
                   <div class="code-block">
                     <pre><code id="generated-code-full" class="language-javascript">flashy('¡Tu notificación personalizada!', {
   type: 'success',
@@ -580,10 +974,17 @@ flashy.destroy();</code></pre>
   theme: 'light'
 });</code></pre>
                   </div>
-                  <button onclick="copyCode('generated-code-full')" class="mt-2 text-sm text-primary">📋 Copiar código</button>
+                  <button
+                    onclick="copyCode('generated-code-full')"
+                    class="mt-2 text-sm text-primary"
+                  >
+                    📋 Copiar código
+                  </button>
                 </div>
                 <div>
-                  <label class="block text-sm font-medium mb-2">Con callbacks</label>
+                  <label class="block text-sm font-medium mb-2"
+                    >Con callbacks</label
+                  >
                   <div class="code-block">
                     <pre><code id="generated-code-callbacks" class="language-javascript">flashy('¡Tu notificación personalizada!', {
   type: 'success',
@@ -597,7 +998,12 @@ flashy.destroy();</code></pre>
   }
 });</code></pre>
                   </div>
-                  <button onclick="copyCode('generated-code-callbacks')" class="mt-2 text-sm text-primary">📋 Copiar código</button>
+                  <button
+                    onclick="copyCode('generated-code-callbacks')"
+                    class="mt-2 text-sm text-primary"
+                  >
+                    📋 Copiar código
+                  </button>
                 </div>
               </div>
             </div>
@@ -611,20 +1017,34 @@ flashy.destroy();</code></pre>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <div class="flex items-center justify-center space-x-2 mb-4">
-            <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+            <div
+              class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center"
+            >
               <span class="text-white font-bold text-sm">F</span>
             </div>
             <span class="text-2xl font-bold">Flashy.js</span>
           </div>
-          <p class="text-gray-400 mb-6">La librería de notificaciones más elegante para JavaScript</p>
+          <p class="text-gray-400 mb-6">
+            La librería de notificaciones más elegante para JavaScript
+          </p>
           <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">NPM</a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">Documentación</a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">Ejemplos</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >GitHub</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >NPM</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Documentación</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Ejemplos</a
+            >
           </div>
           <div class="border-t border-gray-800 pt-8">
-            <p class="text-gray-500 text-sm">© 2024 Flashy.js v1.0.0 - Licencia MIT</p>
+            <p class="text-gray-500 text-sm">
+              © 2024 Flashy.js v1.0.0 - Licencia MIT
+            </p>
           </div>
         </div>
       </div>
@@ -632,64 +1052,81 @@ flashy.destroy();</code></pre>
 
     <!-- Include Flashy.js for demos -->
     <script src="flashy.js"></script>
-
     <script>
-      // Mobile menu toggle
-      document.getElementById("mobile-menu-toggle").addEventListener("click", () => {
-        const menu = document.getElementById("mobile-menu-items");
-        menu.classList.toggle("active");
+      // Mobile menu toggle functionality
+      document
+        .getElementById("mobile-menu-toggle")
+        .addEventListener("click", function () {
+          const menuItems = document.getElementById("mobile-menu-items");
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+          menuItems.classList.toggle("active");
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          // Update aria-label based on state
+          this.setAttribute(
+            "aria-label",
+            !isExpanded
+              ? "Cerrar menú de navegación"
+              : "Abrir menú de navegación"
+          );
+        });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+          navbar.classList.remove("navbar-initial");
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+          navbar.classList.add("navbar-initial");
+        }
       });
 
-      // Convenience methods
-      window.flashy.success = (msg, opts) => flashy(msg, { ...opts, type: "success" });
-      window.flashy.error = (msg, opts) => flashy(msg, { ...opts, type: "error" });
-      window.flashy.warning = (msg, opts) => flashy(msg, { ...opts, type: "warning" });
-      window.flashy.info = (msg, opts) => flashy(msg, { ...opts, type: "info" });
-      window.flashy.closeAll = () => {
-        document.querySelectorAll('[style*="position: fixed"]').forEach((el) => {
-          if (el.style.zIndex === "10000") el.remove();
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#mobile-menu-items a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const menuItems = document.getElementById("mobile-menu-items");
+          const toggleButton = document.getElementById("mobile-menu-toggle");
+
+          menuItems.classList.remove("active");
+          toggleButton.setAttribute("aria-expanded", "false");
+          toggleButton.setAttribute("aria-label", "Abrir menú de navegación");
         });
-      };
+      });
 
-      function getTypeColor(type) {
-        const colors = {
-          success: "#10b981",
-          error: "#ef4444",
-          warning: "#f59e0b",
-          info: "#3b82f6",
-          default: "#6b7280",
-        };
-        return colors[type] || colors.default;
-      }
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const menuItems = document.getElementById("mobile-menu-items");
+        const toggleButton = document.getElementById("mobile-menu-toggle");
 
-      function getTypeIcon(type) {
-        const icons = {
-          success: "✅",
-          error: "❌",
-          warning: "⚠️",
-          info: "ℹ️",
-          default: "💬",
-        };
-        return icons[type] || icons.default;
-      }
-
-      // Add styles for animation
-      const style = document.createElement("style");
-      style.textContent = `
-        @keyframes slideIn {
-          from { transform: translateX(100%); opacity: 0; }
-          to { transform: translateX(0); opacity: 1; }
+        if (
+          !mobileMenu.contains(event.target) &&
+          menuItems.classList.contains("active")
+        ) {
+          menuItems.classList.remove("active");
+          toggleButton.setAttribute("aria-expanded", "false");
+          toggleButton.setAttribute("aria-label", "Abrir menú de navegación");
         }
-      `;
-      document.head.appendChild(style);
+      });
 
-      // Demo functions
+      // Keyboard navigation for mobile menu
+      document
+        .getElementById("mobile-menu-toggle")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            this.click();
+          }
+        });
+
+      // Demo notification function
       function demoNotification(type, message) {
-        if (type === "success") flashy.success(message);
-        else if (type === "error") flashy.error(message);
-        else if (type === "warning") flashy.warning(message);
-        else if (type === "info") flashy.info(message);
-        else flashy(message, type);
+        flashy(message, { type: type });
       }
 
       function demoPosition(position) {
@@ -773,7 +1210,8 @@ flashy.destroy();</code></pre>
         callbackCode += `    console.log('Notificación cerrada');\n`;
         callbackCode += `  }\n`;
         callbackCode += `});`;
-        document.getElementById("generated-code-callbacks").textContent = callbackCode;
+        document.getElementById("generated-code-callbacks").textContent =
+          callbackCode;
 
         if (window.Prism) {
           Prism.highlightAll();
@@ -786,7 +1224,9 @@ flashy.destroy();</code></pre>
         const position = document.getElementById("gen-position").value;
         const animation = document.getElementById("gen-animation").value;
         const theme = document.getElementById("gen-theme").value;
-        const duration = parseInt(document.getElementById("gen-duration").value);
+        const duration = parseInt(
+          document.getElementById("gen-duration").value
+        );
         const icon = document.getElementById("gen-icon").value;
         const closable = document.getElementById("gen-closable").checked;
 
