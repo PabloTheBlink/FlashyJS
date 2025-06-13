@@ -1,6 +1,6 @@
 {
   "name": "@pablotheblink/flashyjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Una librería moderna de notificaciones para JavaScript - ligera, elegante y fácil de usar",
   "main": "flashy.js",
   "module": "flashy.js",
