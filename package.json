@@ -1,0 +1,48 @@
+{
+  "name": "@pablotheblink/flashyjs",
+  "version": "1.0.1",
+  "description": "Una librería moderna de notificaciones para JavaScript - ligera, elegante y fácil de usar",
+  "main": "flashy.js",
+  "module": "flashy.js",
+  "browser": "flashy.js",
+  "types": "flashy.d.ts",
+  "files": [
+    "flashy.js",
+    "flashy.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0",
+    "prepublishOnly": "echo \"Preparando para publicar...\"",
+    "build": "echo \"Build completado\""
+  },
+  "keywords": [
+    "notifications",
+    "toast",
+    "alerts",
+    "messages",
+    "ui",
+    "javascript",
+    "flashy",
+    "notificaciones",
+    "frontend"
+  ],
+  "author": "Pablo Martínez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablotheblink/FlashyJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pablotheblink/FlashyJS/issues"
+  },
+  "homepage": "https://github.com/pablotheblink/FlashyJS#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,15 @@
+index.html
+.git
+.gitignore
+.DS_Store
+node_modules/
+*.log
+.env
+.vscode/
+.idea/
+dist/
+build/
+coverage/
+.nyc_output/
+*.tgz
+*.tar.gz

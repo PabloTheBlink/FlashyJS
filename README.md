@@ -16,39 +16,30 @@ Una librería de notificaciones elegante y personalizable para JavaScript.
 
 ## Instalación 📦
 
-### CDN
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/pablotheblink/FlashyJS/flashy.js"></script>
-```
-
 ### NPM
 
 ```bash
-npm install flashy.js
+npm install @pablotheblink/flashyjs
 ```
 
 ### Yarn
 
 ```bash
-yarn add flashy.js
+yarn add @pablotheblink/flashyjs
+```
+
+### CDN
+
+```html
+<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.1/flashy.js"></script>
 ```
 
 ## Uso Básico 🚀
 
-### Script Global
-
-```html
-<script src="flashy.js"></script>
-<script>
-  window.flashy("¡Hola Mundo!");
-</script>
-```
-
 ### ES Modules
 
 ```javascript
-import flashy from "flashy.js";
+import flashy from "@pablotheblink/flashyjs";
 
 flashy("¡Hola Mundo!");
 ```
@@ -56,9 +47,18 @@ flashy("¡Hola Mundo!");
 ### CommonJS
 
 ```javascript
-const flashy = require("flashy.js");
+const flashy = require("@pablotheblink/flashyjs");
 
 flashy("¡Hola Mundo!");
+```
+
+### Script Global
+
+```html
+<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.1/flashy.js"></script>
+<script>
+  window.flashy("¡Hola Mundo!");
+</script>
 ```
 
 ## Tipos de Notificaciones 🎨
@@ -133,6 +133,12 @@ La librería incluye estilos predeterminados, pero puedes sobrescribirlos usando
 ## Soporte Móvil 📱
 
 Las notificaciones son completamente responsivas y se adaptan automáticamente a dispositivos móviles.
+
+## Enlaces Útiles 🔗
+
+- **Página en NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs
+- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.1/flashy.js
+- **Repositorio**: https://github.com/pablotheblink/FlashyJS
 
 ## Licencia 📄
 
