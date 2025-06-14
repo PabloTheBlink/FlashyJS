@@ -1,153 +1,154 @@
-# Flashy.js 🚀
+# Flashy.js 🔥💥
 
-Una librería de notificaciones elegante y personalizable para JavaScript.
+¿Cansado de notificaciones aburridas que parecen de los 90s? ¡Flashy.js llegó para revolucionar tu vida! 😎
 
-## Características ✨
+Una librería de notificaciones tan elegante que hasta tu ex se va a poner celosa. 💅✨
 
-- 🎨 Múltiples tipos de notificaciones (success, error, warning, info, default)
-- 🎯 6 posiciones diferentes (top-left, top-center, top-right, bottom-left, bottom-center, bottom-right)
-- 🎭 4 animaciones diferentes (slide, fade, bounce, zoom)
-- 🌓 Soporte para temas claro y oscuro
-- 📱 Diseño responsive
-- ⏱️ Barra de progreso opcional
-- 🔄 Personalización completa
-- 🎯 Callbacks para interacción
-- 🚀 Sin dependencias
+## ¿Por qué Flashy.js es tan genial? 🤩
 
-## Instalación 📦
+- 🎨 Múltiples tipos de notificaciones (porque la vida no es solo success o error, ¿verdad?)
+- 🎯 6 posiciones diferentes (como un sniper de notificaciones)
+- 🎭 4 animaciones que harán que tus usuarios se enamoren
+- 🌓 Temas claro y oscuro (para todos los vampiros programadores)
+- 📱 Responsive como tú después del café
+- ⏱️ Barra de progreso que es más puntual que tu jefe
+- 🔄 Más personalizable que tu perfil de dating
+- 🎯 Callbacks para cuando quieras ser stalker de tus notificaciones
+- 🚀 Sin dependencias (independiente como deberías ser tú)
 
-### NPM
+## Instalación 📦 (Más fácil que ligarse a alguien en una app)
+
+### NPM (Para los pros)
 
 ```bash
 npm install @pablotheblink/flashyjs
 ```
 
-### Yarn
+### Yarn (Para los hipsters)
 
 ```bash
 yarn add @pablotheblink/flashyjs
 ```
 
-### CDN
+### CDN (Para los que viven al límite)
 
 ```html
 <script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
 ```
 
-## Uso Básico 🚀
+## Uso Básico 🚀 (Tan simple que tu mascota podría hacerlo)
 
-### ES Modules
+### ES Modules (Moderno y sexy)
 
 ```javascript
 import flashy from "@pablotheblink/flashyjs";
 
-flashy("¡Hola Mundo!");
+flashy("¡Hola Mundo Cruel!"); // Con actitud 😈
 ```
 
-### CommonJS
+### CommonJS (Clásico pero efectivo)
 
 ```javascript
 const flashy = require("@pablotheblink/flashyjs");
 
-flashy("¡Hola Mundo!");
+flashy("¡Saludos terrícolas!"); // Feeling alien 👽
 ```
 
-### Script Global
+### Script Global (Old school pero con estilo)
 
 ```html
 <script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
 <script>
-  window.flashy("¡Hola Mundo!");
+  window.flashy("¡El show debe continuar!"); // Drama queen mode 🎭
 </script>
 ```
 
-## Tipos de Notificaciones 🎨
+## Tipos de Notificaciones 🎨 (Para todas las personalidades)
 
 ```javascript
-// Notificación básica
-flashy("Mensaje básico");
+// Notificación básica (para los tímidos)
+flashy("Mensaje básico... o no tan básico 🤫");
 
-// Notificación de éxito
-flashy.success("¡Operación exitosa!");
+// Notificación de éxito (celebra como si fuera viernes)
+flashy.success("¡Lo lograste, crack! 🎉");
 
-// Notificación de error
-flashy.error("¡Algo salió mal!");
+// Notificación de error (la vida no siempre es color de rosa)
+flashy.error("¡Ups! Alguien la regó 💩");
 
-// Notificación de advertencia
-flashy.warning("¡Ten cuidado!");
+// Notificación de advertencia (tu conciencia hablando)
+flashy.warning("¡Ojo al piojo! 👁️");
 
-// Notificación informativa
-flashy.info("Información importante");
+// Notificación informativa (el sabelotodo del grupo)
+flashy.info("Dato curioso que nadie pidió 🤓");
 ```
 
-## Opciones de Configuración ⚙️
+## Configuración Avanzada ⚙️ (Para los perfeccionistas obsesivos)
 
 ```javascript
-flashy("Mensaje", {
-  type: "success", // 'success' | 'error' | 'warning' | 'info' | 'default'
-  position: "top-right", // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
-  duration: 4000, // duración en milisegundos (0 para infinito)
-  closable: true, // mostrar botón de cerrar
-  animation: "slide", // 'slide' | 'fade' | 'bounce' | 'zoom'
-  theme: "light", // 'light' | 'dark'
-  icon: "🎉", // icono personalizado
-  onClick: () => {}, // callback al hacer clic
-  onClose: () => {}, // callback al cerrar
+flashy("Soy una notificación con actitud", {
+  type: "success", // Porque merezco celebrar
+  position: "top-right", // La esquina VIP
+  duration: 4000, // 4 segundos de gloria
+  closable: true, // Por si te aburres de mí
+  animation: "slide", // Entrada triunfal
+  theme: "dark", // Porque soy misterioso
+  icon: "🔥", // Calentito como mi personalidad
+  onClick: () => console.log("¡Me tocaste! 😏"), // Interacción picante
+  onClose: () => console.log("Adiós cruel mundo 😢"), // Drama hasta el final
 });
 ```
 
-## Configuración Global 🌍
+## Configuración Global 🌍 (Porque eres el jefe de tu código)
 
 ```javascript
-// Establecer opciones por defecto
+// Establece las reglas del juego
 flashy.setDefaults({
-  duration: 5000,
-  position: "bottom-right",
-  theme: "dark",
+  duration: 5000, // 5 segundos de fama
+  position: "bottom-right", // Mi lugar favorito
+  theme: "dark", // Lado oscuro activado
 });
 
-// Obtener opciones actuales
+// Espía las opciones actuales (stalker mode)
 const options = flashy.getOptions();
 ```
 
-## Métodos Adicionales 🛠️
+## Métodos de Control 🛠️ (El poder en tus manos)
 
 ```javascript
-// Cerrar todas las notificaciones
+// Silencia a todas las notificaciones (dictador mode)
 flashy.closeAll();
 
-// Destruir la instancia y limpiar el DOM
+// Destruye todo y desaparece sin dejar rastro (ninja mode)
 flashy.destroy();
 ```
 
-## Personalización de Estilos 🎨
-
-La librería incluye estilos predeterminados, pero puedes sobrescribirlos usando CSS:
+## Personalización de Estilos 🎨 (Hazlo tuyo, tigre)
 
 ```css
 .flashy-notification {
-  /* Tus estilos personalizados */
+  /* Aquí va tu creatividad desbordante */
+  /* Haz que brillen más que tu futuro */
 }
 ```
 
-## Soporte Móvil 📱
+## Soporte Móvil 📱 (Porque también los smartphones merecen amor)
 
-Las notificaciones son completamente responsivas y se adaptan automáticamente a dispositivos móviles.
+Nuestras notificaciones son tan responsivas que se adaptan mejor que tú a los cambios de la vida. 💪
 
-## Enlaces Útiles 🔗
+## Enlaces Útiles 🔗 (Para los curiosos)
 
-- **Página en NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs
-- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js
-- **Repositorio**: https://github.com/pablotheblink/FlashyJS
+- **NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs (Donde vive la magia)
+- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js (Acceso directo al paraíso)
+- **GitHub**: https://github.com/pablotheblink/FlashyJS (El laboratorio secreto)
 
-## Licencia 📄
+## Licencia 📄 (Lo legal y aburrido)
 
-MIT License - Ver el archivo LICENSE para más detalles.
+MIT License - Básicamente puedes hacer lo que quieras, pero no nos culpes si te vuelves adicto.
 
-## Autor 👨‍💻
+## El Genio Detrás de la Locura 👨‍💻
 
-Pablo Martínez
+Pablo Martínez - El tipo que pensó que el mundo necesitaba notificaciones más sexys.
 
-## Versión 📌
+## Versión Actual 📌
 
-1.0.4
+1.0.4 - "La que te va a enamorar" 💕
