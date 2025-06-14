@@ -281,6 +281,12 @@
       }
     }
 
+    // Variables para el control del temporizador y hover
+    let timeoutId = null;
+    let remainingTime = config.duration;
+    let startTime = Date.now();
+    let isPaused = false;
+
     if (config.duration > 0) {
       const progressBar = notification.querySelector(".flashy-progress");
       if (progressBar) {
@@ -290,11 +296,69 @@
           progressBar.style.width = "0%";
         }, 10);
       }
-      setTimeout(() => {
-        closeNotification(notification, config);
-      }, config.duration);
+
+      // Función para iniciar/reanudar el temporizador
+      const startTimer = () => {
+        if (remainingTime <= 0) return;
+
+        startTime = Date.now();
+        timeoutId = setTimeout(() => {
+          closeNotification(notification, config);
+        }, remainingTime);
+      };
+
+      // Función para pausar el temporizador
+      const pauseTimer = () => {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+          timeoutId = null;
+          const elapsed = Date.now() - startTime;
+          remainingTime = Math.max(0, remainingTime - elapsed);
+          isPaused = true;
+
+          // Pausar la barra de progreso
+          if (progressBar) {
+            progressBar.style.animationPlayState = "paused";
+            const currentWidth = parseFloat(getComputedStyle(progressBar).width);
+            const containerWidth = parseFloat(getComputedStyle(progressBar.parentElement).width);
+            const percentage = (currentWidth / containerWidth) * 100;
+            progressBar.style.transition = "none";
+            progressBar.style.width = `${percentage}%`;
+          }
+        }
+      };
+
+      // Función para reanudar el temporizador
+      const resumeTimer = () => {
+        if (isPaused && remainingTime > 0) {
+          isPaused = false;
+
+          // Reanudar la barra de progreso
+          if (progressBar) {
+            progressBar.style.transition = `width ${remainingTime}ms linear`;
+            setTimeout(() => {
+              progressBar.style.width = "0%";
+            }, 10);
+          }
+
+          startTimer();
+        }
+      };
+
+      // Event listeners para hover
+      notification.addEventListener("mouseenter", pauseTimer);
+      notification.addEventListener("mouseleave", resumeTimer);
+
+      // Iniciar el temporizador
+      startTimer();
     }
-    return () => closeNotification(notification, config);
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      closeNotification(notification, config);
+    };
   }
 
   flashy.closeAll = function () {
