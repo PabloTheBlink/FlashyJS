@@ -224,7 +224,7 @@ Si aplica, añade capturas de pantalla.
 - OS: [ej. iOS]
 - Navegador: [ej. Chrome, Safari]
 - Versión: [ej. 22]
-- Versión de Flashy.js: [ej. 1.0.3]
+- Versión de Flashy.js: [ej. 1.0.4]
 
 **Contexto Adicional**
 Cualquier otra información relevante.
@@ -330,7 +330,7 @@ Seguimos [Semantic Versioning](https://semver.org/):
 
 - **MAJOR** version (1.0.0 → 2.0.0): Cambios incompatibles
 - **MINOR** version (1.0.0 → 1.1.0): Nueva funcionalidad compatible
-- **PATCH** version (1.0.0 → 1.0.1): Bug fixes compatibles
+- **PATCH** version (1.0.0 → 1.0.4): Bug fixes compatibles
 
 ### Changelog
 

@@ -31,7 +31,7 @@ yarn add @pablotheblink/flashyjs
 ### CDN
 
 ```html
-<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.3/flashy.js"></script>
+<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
 ```
 
 ## Uso Básico 🚀
@@ -55,7 +55,7 @@ flashy("¡Hola Mundo!");
 ### Script Global
 
 ```html
-<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.3/flashy.js"></script>
+<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
 <script>
   window.flashy("¡Hola Mundo!");
 </script>
@@ -137,7 +137,7 @@ Las notificaciones son completamente responsivas y se adaptan automáticamente a
 ## Enlaces Útiles 🔗
 
 - **Página en NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs
-- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.3/flashy.js
+- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js
 - **Repositorio**: https://github.com/pablotheblink/FlashyJS
 
 ## Licencia 📄
@@ -150,4 +150,4 @@ Pablo Martínez
 
 ## Versión 📌
 
-1.0.3
+1.0.4

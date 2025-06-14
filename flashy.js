@@ -1,6 +1,6 @@
 /**
  * Flashy.js - Librería de Notificaciones
- * @version 1.0.1
+ * @version 1.0.4
  * @author Pablo Martínez
  * @license MIT
  *
@@ -402,7 +402,7 @@
   flashy.warning = (message, options = {}) => flashy(message, { ...options, type: "warning" });
   flashy.info = (message, options = {}) => flashy(message, { ...options, type: "info" });
 
-  flashy.version = "1.0.1";
+  flashy.version = "1.0.4";
 
   return flashy;
 });
