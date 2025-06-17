@@ -81,7 +81,7 @@
       .mobile-menu {
         display: none;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 1280px) {
         .desktop-menu {
           display: none;
         }
@@ -137,7 +137,7 @@
             </div>
             <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Flashy.js</span>
           </div>
-          <div class="desktop-menu hidden md:flex items-center space-x-8">
+          <div class="desktop-menu hidden xl:flex items-center space-x-8">
             <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a>
             <a href="#instalacion" class="text-gray-600 hover:text-primary transition-colors">Instalación</a>
             <a href="#ejemplos" class="text-gray-600 hover:text-primary transition-colors">Ejemplos</a>
@@ -154,8 +154,8 @@
                       title="GitHub Star Button"></iframe>
             </div>
           </div>
-          <div class="mobile-menu md:hidden">
-            <button id="mobile-menu-toggle" class="text-gray-600 hover:text-primary">
+          <div class="mobile-menu xl:hidden">
+            <button id="mobile-menu-toggle" class="text-gray-600 hover:text-primary" ariba-label="Abrir menú">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
