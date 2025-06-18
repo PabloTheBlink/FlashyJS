@@ -1221,6 +1221,15 @@ flashy.destroy();</code></pre>
         if (window.Prism) {
           Prism.highlightAll();
         }
+
+        flashy(`Código generado para la notificación: ${message}`, {
+          type: "info",
+          position: "bottom-center",
+          duration: 3000,
+          animation: "zoom",
+          theme: "dark",
+          
+        });
       }
 
       function previewNotification() {
