@@ -1,0 +1,155 @@
+{
+  "name": "Flashy.js - Modern JavaScript Notification Library",
+  "short_name": "Flashy.js",
+  "description": "Librería JavaScript moderna para notificaciones web. Ligera (8KB), personalizable y sin dependencias. Creada por Pablo Martínez, desarrollador Full Stack.",
+  "version": "1.0.5",
+  "manifest_version": 2,
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["developer", "productivity", "utilities", "education"],
+  "screenshots": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Flashy.js Demo Screenshot"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Documentación API",
+      "short_name": "Docs",
+      "description": "Ver la documentación completa de la API",
+      "url": "/#api",
+      "icons": [
+        {
+          "src": "/icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Ejemplos Interactivos",
+      "short_name": "Ejemplos",
+      "description": "Probar ejemplos interactivos de notificaciones",
+      "url": "/#ejemplos",
+      "icons": [
+        {
+          "src": "/icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Generador de Código",
+      "short_name": "Generador",
+      "description": "Generar código personalizado para notificaciones",
+      "url": "/#generador",
+      "icons": [
+        {
+          "src": "/icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://github.com/pablotheblink/FlashyJS"
+    },
+    {
+      "platform": "web",
+      "url": "https://www.npmjs.com/package/@pablotheblink/flashyjs"
+    }
+  ],
+  "prefer_related_applications": false,
+  "author": {
+    "name": "Pablo Martínez",
+    "email": "contact@pablotheblink.dev",
+    "url": "https://github.com/pablotheblink"
+  },
+  "developer": {
+    "name": "Pablo Martínez",
+    "url": "https://github.com/pablotheblink"
+  },
+  "keywords": ["javascript", "typescript", "notifications", "toast", "alerts", "ui", "frontend", "library", "developer", "pablo martinez", "full stack"]
+}

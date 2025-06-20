@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Main Page -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Home Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#inicio</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Installation Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#instalacion</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Examples Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#ejemplos</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- API Documentation -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#api</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Code Generator -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#generador</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Testimonials Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#testimonios</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Content Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#contenido</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Collaboration Section -->
+  <url>
+    <loc>https://pablotheblink.github.io/FlashyJS/#colaboracion</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- GitHub Repository -->
+  <url>
+    <loc>https://github.com/pablotheblink/FlashyJS</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- NPM Package -->
+  <url>
+    <loc>https://www.npmjs.com/package/@pablotheblink/flashyjs</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

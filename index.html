@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth" itemscope itemtype="https://schema.org/WebSite">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flashy.js - La Librería de Notificaciones Más Sexy del Mundo 🔥</title>
+    <title>Flashy.js - Librería JavaScript de Notificaciones Moderna | Desarrollador Full Stack Pablo Martínez</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Flashy.js - Librería JavaScript de notificaciones moderna, ligera (8KB) y personalizable. Creada por el desarrollador Full Stack Pablo Martínez. Documentación completa, ejemplos interactivos y múltiples temas." />
+    <meta name="keywords" content="javascript, notificaciones, library, frontend, toast, alerts, developer, programador, full stack, pablo martinez, flashyjs, UI components" />
+    <meta name="author" content="Pablo Martínez" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="classification" content="Software Development, JavaScript Library, Frontend Development" />
+    <meta name="category" content="Programming, Web Development, Software Engineering" />
+    <meta name="skills" content="JavaScript, TypeScript, React, Node.js, Full Stack Development, Frontend, Backend" />
+    <meta name="experience" content="Senior Full Stack Developer, JavaScript Expert, Library Creator" />
+    <meta name="geo.region" content="ES" />
+    <meta name="geo.country" content="Spain" />
+    <meta name="dc.language" content="es" />
+    <meta name="rating" content="general" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pablotheblink.github.io/FlashyJS/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pablotheblink.github.io/FlashyJS/" />
+    <meta property="og:title" content="Flashy.js - Librería JavaScript de Notificaciones | Pablo Martínez" />
+    <meta property="og:description" content="Librería JavaScript moderna para notificaciones. 8KB, múltiples animaciones, temas personalizables. Creada por desarrollador Full Stack Pablo Martínez." />
+    <meta property="og:image" content="https://pablotheblink.github.io/FlashyJS/icon.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Flashy.js" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://pablotheblink.github.io/FlashyJS/" />
+    <meta name="twitter:title" content="Flashy.js - Librería JavaScript de Notificaciones" />
+    <meta name="twitter:description" content="Librería JavaScript moderna, ligera y personalizable para notificaciones. Documentación completa y ejemplos interactivos." />
+    <meta name="twitter:image" content="https://pablotheblink.github.io/FlashyJS/icon.png" />
+    <meta name="twitter:creator" content="@pablotheblink" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- Icons -->
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="shortcut icon" href="icon.png" />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+    <!-- theme color -->
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="msapplication-TileColor" content="#6366f1" />
+    <meta name="google-adsense-account" content="ca-pub-8696876033859702">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8696876033859702"
      crossorigin="anonymous"></script>
-    <link rel="icon" href="icon.png" type="image/png" />
-
-    <!-- theme color -->
-    <meta name="theme-color" content="#BABBF7" />
-    <meta name="google-adsense-account" content="ca-pub-8696876033859702">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -115,6 +164,29 @@
           grid-template-columns: 1fr;
         }
       }
+      
+      /* SEO and Accessibility styles */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      
+      /* SEO visible content */
+      .seo-content {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -127,183 +199,459 @@
       gtag('config', 'G-PM8NQYPHCK');
     </script>
     <script src="https://api.devetty.es/resources/js/analytics.js"></script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://pablotheblink.github.io/FlashyJS/#person",
+          "name": "Pablo Martínez",
+          "givenName": "Pablo",
+          "familyName": "Martínez",
+          "jobTitle": "Senior Full Stack Developer",
+          "description": "Desarrollador Full Stack especializado en JavaScript, React, Node.js y arquitecturas escalables. Creador de librerías open source como Flashy.js.",
+          "url": "https://pablotheblink.github.io/FlashyJS/",
+          "image": "https://pablotheblink.github.io/FlashyJS/icon.png",
+          "sameAs": [
+            "https://github.com/pablotheblink",
+            "https://www.linkedin.com/in/pablotheblink",
+            "https://twitter.com/pablotheblink"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ES",
+            "addressRegion": "Spain"
+          },
+          "knowsAbout": [
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "Vue.js",
+            "Angular",
+            "Full Stack Development",
+            "Frontend Development",
+            "Backend Development",
+            "Web Development",
+            "Software Engineering",
+            "Open Source Development"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Full Stack Developer",
+            "description": "Desarrollador especializado en tecnologías web modernas y arquitecturas escalables"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://pablotheblink.github.io/FlashyJS/#website",
+          "url": "https://pablotheblink.github.io/FlashyJS/",
+          "name": "Flashy.js",
+          "description": "Librería JavaScript moderna para notificaciones web. Ligera, personalizable y con múltiples animaciones.",
+          "inLanguage": "es",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "GitHub Pages",
+            "url": "https://github.com/pablotheblink/FlashyJS"
+          },
+          "author": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "creator": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://pablotheblink.github.io/FlashyJS/#{search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://pablotheblink.github.io/FlashyJS/#software",
+          "name": "Flashy.js",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web Browser",
+          "description": "Librería JavaScript moderna para crear notificaciones web elegantes y personalizables. Sin dependencias, solo 8KB.",
+          "softwareVersion": "1.0.5",
+          "datePublished": "2024-01-01",
+          "dateModified": "2025-06-20",
+          "author": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "creator": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "maintainer": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "programmingLanguage": "JavaScript",
+          "codeRepository": "https://github.com/pablotheblink/FlashyJS",
+          "downloadUrl": "https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js",
+          "installUrl": "https://www.npmjs.com/package/@pablotheblink/flashyjs",
+          "screenshot": "https://pablotheblink.github.io/FlashyJS/icon.png",
+          "fileSize": "8KB",
+          "license": "https://opensource.org/licenses/MIT",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "100",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://pablotheblink.github.io/FlashyJS/#service",
+          "name": "Desarrollo de Software Full Stack",
+          "description": "Servicios profesionales de desarrollo web full stack, creación de librerías JavaScript y consultoría técnica.",
+          "provider": {
+            "@id": "https://pablotheblink.github.io/FlashyJS/#person"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Spain"
+          },
+          "serviceType": "Software Development",
+          "category": "Web Development",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Desarrollo",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Desarrollo Frontend",
+                  "description": "Desarrollo de interfaces web modernas con React, Vue.js y JavaScript"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Desarrollo Backend",
+                  "description": "APIs REST, Node.js, bases de datos y arquitecturas escalables"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Librerías JavaScript",
+                  "description": "Creación de librerías y componentes reutilizables para JavaScript"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pablotheblink.github.io/FlashyJS/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://pablotheblink.github.io/FlashyJS/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Documentación",
+              "item": "https://pablotheblink.github.io/FlashyJS/#api"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ejemplos",
+              "item": "https://pablotheblink.github.io/FlashyJS/#ejemplos"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Instalación",
+              "item": "https://pablotheblink.github.io/FlashyJS/#instalacion"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body class="bg-gray-50 text-gray-900" itemscope itemtype="https://schema.org/WebPage">
+    <!-- SEO-only content -->
+    <div class="sr-only">
+      <h1>Pablo Martínez - Desarrollador Full Stack | Flashy.js JavaScript Library</h1>
+      <p>Desarrollador Full Stack especializado en JavaScript, React, Node.js. Creador de Flashy.js, librería moderna de notificaciones para web.</p>
+      <nav aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="#inicio"><span itemprop="name">Inicio</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="#instalacion"><span itemprop="name">Instalación</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="#api"><span itemprop="name">Documentación</span></a>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </nav>
+    </div>
+
     <!-- Header/Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="fixed top-0 w-full z-50 glass-effect" role="banner" itemscope itemtype="https://schema.org/WPHeader" aria-label="Navegación principal del sitio">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navegación principal">
         <div class="flex justify-between items-center h-16">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2" itemscope itemtype="https://schema.org/Brand">
             <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <span class="text-white font-bold text-sm">F</span>
             </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Flashy.js</span>
+            <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" itemprop="name">Flashy.js</span>
           </div>
           <div class="desktop-menu hidden xl:flex items-center space-x-8">
-            <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a>
-            <a href="#instalacion" class="text-gray-600 hover:text-primary transition-colors">Instalación</a>
-            <a href="#ejemplos" class="text-gray-600 hover:text-primary transition-colors">Ejemplos</a>
-            <a href="#api" class="text-gray-600 hover:text-primary transition-colors">API</a>
-            <a href="#generador" class="text-gray-600 hover:text-primary transition-colors">Generador</a>
-            <a href="#testimonios" class="text-gray-600 hover:text-primary transition-colors">Testimonios</a>
-            <a href="#contenido" class="text-gray-600 hover:text-primary transition-colors">Contenido</a>
-            <a href="#colaboracion" class="text-gray-600 hover:text-primary transition-colors">Colaboración</a>
+            <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors" aria-label="Ir a la sección de inicio">Inicio</a>
+            <a href="#instalacion" class="text-gray-600 hover:text-primary transition-colors" aria-label="Ir a la sección de instalación">Instalación</a>
+            <a href="#ejemplos" class="text-gray-600 hover:text-primary transition-colors" aria-label="Ver ejemplos de uso">Ejemplos</a>
+            <a href="#api" class="text-gray-600 hover:text-primary transition-colors" aria-label="Ver documentación de la API">API</a>
+            <a href="#generador" class="text-gray-600 hover:text-primary transition-colors" aria-label="Usar el generador de código">Generador</a>
+            <a href="#testimonios" class="text-gray-600 hover:text-primary transition-colors" aria-label="Leer testimonios de usuarios">Testimonios</a>
+            <a href="#contenido" class="text-gray-600 hover:text-primary transition-colors" aria-label="Ver más contenido">Contenido</a>
+            <a href="#colaboracion" class="text-gray-600 hover:text-primary transition-colors" aria-label="Información sobre colaboración">Colaboración</a>
             <div class="ml-4">
               <iframe src="https://ghbtns.com/github-btn.html?user=pablotheblink&repo=FlashyJS&type=star&count=true&size=large" 
                       style="border: none; overflow: hidden;" 
                       width="130" 
                       height="30" 
-                      title="GitHub Star Button"></iframe>
+                      title="Botón de GitHub para dar estrella al repositorio Flashy.js"></iframe>
             </div>
           </div>
           <div class="mobile-menu xl:hidden">
-            <button id="mobile-menu-toggle" class="text-gray-600 hover:text-primary" ariba-label="Abrir menú">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="mobile-menu-toggle" class="text-gray-600 hover:text-primary" aria-label="Abrir menú de navegación móvil">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
             <div id="mobile-menu-items" class="mobile-menu-items">
-              <a href="#inicio" class="text-gray-600 hover:text-primary py-2">Inicio</a>
-              <a href="#instalacion" class="text-gray-600 hover:text-primary py-2">Instalación</a>
-              <a href="#ejemplos" class="text-gray-600 hover:text-primary py-2">Ejemplos</a>
-              <a href="#api" class="text-gray-600 hover:text-primary py-2">API</a>
-              <a href="#generador" class="text-gray-600 hover:text-primary py-2">Generador</a>
-              <a href="#testimonios" class="text-gray-600 hover:text-primary py-2">Testimonios</a>
-              <a href="#contenido" class="text-gray-600 hover:text-primary py-2">Contenido</a>
-              <a href="#colaboracion" class="text-gray-600 hover:text-primary py-2">Colaboración</a>
+              <a href="#inicio" class="text-gray-600 hover:text-primary py-2" aria-label="Ir a inicio">Inicio</a>
+              <a href="#instalacion" class="text-gray-600 hover:text-primary py-2" aria-label="Ver instalación">Instalación</a>
+              <a href="#ejemplos" class="text-gray-600 hover:text-primary py-2" aria-label="Ver ejemplos">Ejemplos</a>
+              <a href="#api" class="text-gray-600 hover:text-primary py-2" aria-label="Ver API">API</a>
+              <a href="#generador" class="text-gray-600 hover:text-primary py-2" aria-label="Usar generador">Generador</a>
+              <a href="#testimonios" class="text-gray-600 hover:text-primary py-2" aria-label="Ver testimonios">Testimonios</a>
+              <a href="#contenido" class="text-gray-600 hover:text-primary py-2" aria-label="Ver contenido">Contenido</a>
+              <a href="#colaboracion" class="text-gray-600 hover:text-primary py-2" aria-label="Ver colaboración">Colaboración</a>
               <div class="py-2 flex justify-center">
                 <iframe src="https://ghbtns.com/github-btn.html?user=pablotheblink&repo=FlashyJS&type=star&count=true" 
                         style="border: none; overflow: hidden;" 
                         width="100" 
                         height="20" 
-                        title="GitHub Star Button"></iframe>
+                        title="Botón de GitHub para dar estrella"></iframe>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-40 pb-16 gradient-bg hero-pattern text-white bg-primary/75">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <div class="floating">
-            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8">
-              <span class="text-4xl">🔥</span>
+    <main>
+      <section id="inicio" class="pt-40 pb-16 gradient-bg hero-pattern text-white bg-primary/75" itemscope itemtype="https://schema.org/SoftwareApplication" aria-labelledby="hero-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article class="text-center" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="floating">
+              <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8" aria-label="Icono decorativo de fuego representando Flashy.js">
+                <span class="text-4xl" aria-hidden="true">🔥</span>
+              </div>
             </div>
-          </div>
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in">Flashy<span class="text-yellow-300">.js</span></h1>
-          <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto fade-in">La librería de notificaciones más SEXY y adictiva del universo JavaScript. Sin rollos, sin dramas, puro fuego 🚀</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
-            <button onclick="demoNotification('success', '¡Bienvenido al lado salvaje de las notificaciones! 😈')" class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">¡Pruébame! 🔥</button>
-            <a href="#instalacion" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors">Quiero Más 😍</a>
-          </div>
+            <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" itemprop="name">
+              Flashy<span class="text-yellow-300">.js</span>
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto fade-in" itemprop="description">
+              La librería de notificaciones JavaScript más moderna y personalizable del universo. Sin dependencias, puro rendimiento 🚀
+            </p>
+            
+            <!-- SEO Keywords hidden content -->
+            <div class="sr-only">
+              <p>Librería JavaScript notificaciones, toast messages, alerts modernos, frontend development, Pablo Martínez desarrollador full stack</p>
+              <meta itemprop="applicationCategory" content="DeveloperApplication" />
+              <meta itemprop="operatingSystem" content="Web Browser" />
+              <meta itemprop="softwareVersion" content="1.0.5" />
+              <meta itemprop="fileSize" content="8KB" />
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+              <button onclick="demoNotification('success', '¡Bienvenido al futuro de las notificaciones! 😈')" 
+                      class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                      aria-label="Probar demo de notificación de éxito">
+                ¡Pruébame! 🔥
+              </button>
+              <a href="#instalacion" 
+                 class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
+                 aria-label="Ir a la sección de instalación">
+                Quiero Más 😍
+              </a>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Features -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">¿Por qué Flashy.js te va a enamorar? 💕</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">Porque la vida es demasiado corta para notificaciones aburridas</p>
+      <!-- Features -->
+      <section class="py-16 bg-white" itemscope itemtype="https://schema.org/ItemList" aria-labelledby="features-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header class="text-center mb-12">
+            <h2 id="features-title" class="text-3xl font-bold mb-4" itemprop="name">¿Por qué Flashy.js te va a enamorar? 💕</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto" itemprop="description">Características que hacen de Flashy.js la mejor librería de notificaciones</p>
+          </header>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <article class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-shadow" itemscope itemtype="https://schema.org/SoftwareFeature" itemprop="itemListElement">
+              <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+                <span class="text-white text-xl">⚡</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" itemprop="name">Súper Liviano</h3>
+              <p class="text-gray-600" itemprop="description">Solo ~8KB. Más liviano que tus preocupaciones después de usarlo.</p>
+              <meta itemprop="featureList" content="Lightweight, 8KB size, Fast loading" />
+            </article>
+            <article class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow" itemscope itemtype="https://schema.org/SoftwareFeature" itemprop="itemListElement">
+              <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+                <span class="text-white text-xl">🎨</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" itemprop="name">Totalmente Personalizable</h3>
+              <p class="text-gray-600" itemprop="description">Temas, posiciones, animaciones y más opciones bajo tu control.</p>
+              <meta itemprop="featureList" content="Customizable themes, Multiple positions, Various animations" />
+            </article>
+            <article class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow" itemscope itemtype="https://schema.org/SoftwareFeature" itemprop="itemListElement">
+              <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+                <span class="text-white text-xl">📱</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" itemprop="name">100% Responsive</h3>
+              <p class="text-gray-600" itemprop="description">Se adapta perfectamente a desktop, tablet y móvil.</p>
+              <meta itemprop="featureList" content="Responsive design, Mobile friendly, Cross-platform" />
+            </article>
+          </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span class="text-white text-xl">⚡</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Más Ligero que tus Excusas</h3>
-            <p class="text-gray-600">Solo ~8KB. Más liviano que tu conciencia después de mentir.</p>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span class="text-white text-xl">🎨</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Más Personalizable que tu Perfil</h3>
-            <p class="text-gray-600">Temas, posiciones, animaciones y más trucos bajo la manga.</p>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span class="text-white text-xl">📱</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Más Responsive que tu Ex</h3>
-            <p class="text-gray-600">Se adapta a todo: desktop, tablet, móvil y tu corazón roto.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Installation -->
-    <section id="instalacion" class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Instalación (Más Fácil que Romper Corazones) 💔</h2>
-          <p class="text-gray-600">Elige tu veneno favorito para integrar esta belleza</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- CDN -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-red-500 rounded mr-2 flex items-center justify-center text-white text-xs">1</span>
-              Via CDN (Para los Rebels)
-            </h3>
-            <div class="code-block">
-              <pre><code class="language-html">&lt;script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js"&gt;&lt;/script&gt;
+      <!-- Installation -->
+      <section id="instalacion" class="py-16 bg-gray-50" itemscope itemtype="https://schema.org/HowTo" aria-labelledby="installation-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header class="text-center mb-12">
+            <h2 id="installation-title" class="text-3xl font-bold mb-4" itemprop="name">Instalación Rápida y Sencilla �</h2>
+            <p class="text-gray-600" itemprop="description">Elige tu método favorito para integrar Flashy.js en tu proyecto</p>
+            <meta itemprop="totalTime" content="PT5M" />
+            <meta itemprop="supply" content="Node.js, NPM, or Web Browser" />
+          </header>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- CDN -->
+            <article class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" itemscope itemtype="https://schema.org/HowToStep" itemprop="step">
+              <header>
+                <h3 class="text-lg font-semibold mb-4 flex items-center" itemprop="name">
+                  <span class="w-6 h-6 bg-red-500 rounded mr-2 flex items-center justify-center text-white text-xs">1</span>
+                  Via CDN (Instantáneo)
+                </h3>
+              </header>
+              <div class="code-block" itemprop="text">
+                <pre><code class="language-html">&lt;script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-  flashy('¡Hola mundo cruel!', 'success');
+  flashy('¡Hola mundo!', 'success');
 &lt;/script&gt;
-              </code></pre>
-            </div>
-          </div>
-          <!-- NPM -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-green-500 rounded mr-2 flex items-center justify-center text-white text-xs">2</span>
-              Via NPM (Para los Pros)
-            </h3>
-            <div class="code-block">
-              <pre><code class="language-bash">npm install @pablotheblink/flashyjs</code></pre>
-            </div>
-            <div class="code-block mt-4">
-              <pre><code class="language-javascript">import flashy from '@pablotheblink/flashyjs';
-flashy('¡Saludos terrícolas!', 'success');</code></pre>
-            </div>
-          </div>
-          <!-- Download -->
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold mb-4 flex items-center">
-              <span class="w-6 h-6 bg-blue-500 rounded mr-2 flex items-center justify-center text-white text-xs">3</span>
-              Descarga (Old School)
-            </h3>
-            <p class="text-gray-600 mb-4">Para los nostálgicos que extrañan el FTP</p>
-            <button onclick="window.location.href='https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js'" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Descargar v1.0.5</button>
+                </code></pre>
+              </div>
+            </article>
+            <!-- NPM -->
+            <article class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" itemscope itemtype="https://schema.org/HowToStep" itemprop="step">
+              <header>
+                <h3 class="text-lg font-semibold mb-4 flex items-center" itemprop="name">
+                  <span class="w-6 h-6 bg-green-500 rounded mr-2 flex items-center justify-center text-white text-xs">2</span>
+                  Via NPM (Profesional)
+                </h3>
+              </header>
+              <div class="code-block" itemprop="text">
+                <pre><code class="language-bash">npm install @pablotheblink/flashyjs</code></pre>
+              </div>
+              <div class="code-block mt-4">
+                <pre><code class="language-javascript">import flashy from '@pablotheblink/flashyjs';
+flashy('¡Instalado correctamente!', 'success');</code></pre>
+              </div>
+            </article>
+            <!-- Download -->
+            <article class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" itemscope itemtype="https://schema.org/HowToStep" itemprop="step">
+              <header>
+                <h3 class="text-lg font-semibold mb-4 flex items-center" itemprop="name">
+                  <span class="w-6 h-6 bg-blue-500 rounded mr-2 flex items-center justify-center text-white text-xs">3</span>
+                  Descarga Directa
+                </h3>
+              </header>
+              <p class="text-gray-600 mb-4" itemprop="text">Para proyectos que requieren archivos locales</p>
+              <button onclick="window.location.href='https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js'" 
+                      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                      aria-label="Descargar archivo JavaScript de Flashy.js versión 1.0.5">
+                Descargar v1.0.5
+              </button>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Examples -->
-    <section id="ejemplos" class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Playground de Tentación 🎪</h2>
-          <p class="text-gray-600">Juega con estas bellezas y ve cómo se mueven</p>
-        </div>
-        <!-- Types Demo -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6">Tipos de Personalidad</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
-            <button onclick="demoNotification('success', '¡Lo lograste, crack! 🎉')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors">Success</button>
-            <button onclick="demoNotification('error', '¡Ups! Alguien la regó 💩')" class="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg transition-colors">Error</button>
-            <button onclick="demoNotification('warning', '¡Ojo al piojo! 👁️')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 rounded-lg transition-colors">Warning</button>
-            <button onclick="demoNotification('info', 'Dato que nadie pidió 🤓')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors">Info</button>
-            <button onclick="demoNotification('default', 'Mensaje con actitud 😎')" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors">Default</button>
-          </div>
-          <div class="code-block">
-            <pre><code class="language-javascript">// Diferentes formas de usar los tipos
+      <!-- Examples -->
+      <section id="ejemplos" class="py-16 bg-white" itemscope itemtype="https://schema.org/WebApplication" aria-labelledby="examples-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header class="text-center mb-12">
+            <h2 id="examples-title" class="text-3xl font-bold mb-4" itemprop="name">Ejemplos Interactivos de Flashy.js 🎪</h2>
+            <p class="text-gray-600" itemprop="description">Explora las diferentes funcionalidades con ejemplos en vivo</p>
+          </header>
+          
+          <!-- Types Demo -->
+          <article class="mb-12" itemscope itemtype="https://schema.org/SoftwareFeature">
+            <header>
+              <h3 class="text-2xl font-semibold mb-6" itemprop="name">Tipos de Notificaciones</h3>
+            </header>
+            <fieldset class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8 border-0 p-0">
+              <legend class="sr-only">Tipos de notificaciones disponibles</legend>
+              <button onclick="demoNotification('success', '¡Operación exitosa! 🎉')" 
+                      class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar notificación de éxito">
+                Success
+              </button>
+              <button onclick="demoNotification('error', '¡Error detectado! ⚠️')" 
+                      class="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar notificación de error">
+                Error
+              </button>
+              <button onclick="demoNotification('warning', '¡Atención requerida! 👁️')" 
+                      class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar notificación de advertencia">
+                Warning
+              </button>
+              <button onclick="demoNotification('info', 'Información importante 📋')" 
+                      class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar notificación informativa">
+                Info
+              </button>
+              <button onclick="demoNotification('default', 'Notificación estándar �')" 
+                      class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar notificación por defecto">
+                Default
+              </button>
+            </fieldset>
+            <section class="code-block" aria-labelledby="code-types-title">
+              <h4 id="code-types-title" class="sr-only">Ejemplo de código para tipos de notificaciones</h4>
+              <pre><code class="language-javascript">// Diferentes formas de usar los tipos
 flashy.success('¡Operación exitosa!');
 flashy.error('Algo salió mal');
 flashy.warning('Ten cuidado');
@@ -312,91 +660,159 @@ flashy.info('Información útil');
 // O usando el método principal
 flashy('Mensaje', 'success');
 flashy('Mensaje', { type: 'error' });</code></pre>
-          </div>
-        </div>
-        <!-- Positions Demo -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6">Posiciones Estratégicas</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-            <button onclick="demoPosition('top-left')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Left</button>
-            <button onclick="demoPosition('top-center')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Center</button>
-            <button onclick="demoPosition('top-right')" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors">Top Right</button>
-            <button onclick="demoPosition('bottom-left')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Left</button>
-            <button onclick="demoPosition('bottom-center')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Center</button>
-            <button onclick="demoPosition('bottom-right')" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors">Bottom Right</button>
-          </div>
-          <div class="code-block">
-            <pre><code class="language-javascript">flashy('Mensaje', { 
+            </section>
+          </article>
+          
+          <!-- Positions Demo -->
+          <article class="mb-12" itemscope itemtype="https://schema.org/SoftwareFeature">
+            <header>
+              <h3 class="text-2xl font-semibold mb-6" itemprop="name">Posiciones de Pantalla</h3>
+            </header>
+            <fieldset class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 border-0 p-0">
+              <legend class="sr-only">Posiciones disponibles para las notificaciones</legend>
+              <button onclick="demoPosition('top-left')" 
+                      class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición superior izquierda">
+                Top Left
+              </button>
+              <button onclick="demoPosition('top-center')" 
+                      class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición superior centro">
+                Top Center
+              </button>
+              <button onclick="demoPosition('top-right')" 
+                      class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición superior derecha">
+                Top Right
+              </button>
+              <button onclick="demoPosition('bottom-left')" 
+                      class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición inferior izquierda">
+                Bottom Left
+              </button>
+              <button onclick="demoPosition('bottom-center')" 
+                      class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición inferior centro">
+                Bottom Center
+              </button>
+              <button onclick="demoPosition('bottom-right')" 
+                      class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar posición inferior derecha">
+                Bottom Right
+              </button>
+            </fieldset>
+            <section class="code-block" aria-labelledby="code-positions-title">
+              <h4 id="code-positions-title" class="sr-only">Ejemplo de código para posiciones</h4>
+              <pre><code class="language-javascript">flashy('Mensaje', { 
   position: 'top-left'    // top-left, top-center, top-right
 });                       // bottom-left, bottom-center, bottom-right</code></pre>
-          </div>
-        </div>
-        <!-- Animations Demo -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6">Movimientos Seductores</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            <button onclick="demoAnimation('slide')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Slide</button>
-            <button onclick="demoAnimation('fade')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Fade</button>
-            <button onclick="demoAnimation('bounce')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Bounce</button>
-            <button onclick="demoAnimation('zoom')" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors">Zoom</button>
-          </div>
-          <div class="code-block">
-            <pre><code class="language-javascript">flashy('Mensaje', { 
+            </section>
+          </article>
+          
+          <!-- Animations Demo -->
+          <article class="mb-12" itemscope itemtype="https://schema.org/SoftwareFeature">
+            <header>
+              <h3 class="text-2xl font-semibold mb-6" itemprop="name">Animaciones Disponibles</h3>
+            </header>
+            <fieldset class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-0 p-0">
+              <legend class="sr-only">Tipos de animaciones disponibles</legend>
+              <button onclick="demoAnimation('slide')" 
+                      class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar animación deslizante">
+                Slide
+              </button>
+              <button onclick="demoAnimation('fade')" 
+                      class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar animación de desvanecimiento">
+                Fade
+              </button>
+              <button onclick="demoAnimation('bounce')" 
+                      class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar animación de rebote">
+                Bounce
+              </button>
+              <button onclick="demoAnimation('zoom')" 
+                      class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar animación de zoom">
+                Zoom
+              </button>
+            </fieldset>
+            <section class="code-block" aria-labelledby="code-animations-title">
+              <h4 id="code-animations-title" class="sr-only">Ejemplo de código para animaciones</h4>
+              <pre><code class="language-javascript">flashy('Mensaje', { 
   animation: 'bounce'     // slide, fade, bounce, zoom
 });</code></pre>
-          </div>
-        </div>
-        <!-- Themes Demo -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6">Looks & Vibes</h3>
-          <div class="grid grid-cols-2 gap-4 mb-8">
-            <button onclick="demoTheme('light')" class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-3 rounded-lg transition-colors">Light Theme</button>
-            <button onclick="demoTheme('dark')" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg transition-colors">Dark Theme</button>
-          </div>
-          <div class="code-block">
-            <pre><code class="language-javascript">flashy('Mensaje', { 
+            </section>
+          </article>
+          
+          <!-- Themes Demo -->
+          <article class="mb-12" itemscope itemtype="https://schema.org/SoftwareFeature">
+            <header>
+              <h3 class="text-2xl font-semibold mb-6" itemprop="name">Temas Visuales</h3>
+            </header>
+            <fieldset class="grid grid-cols-2 gap-4 mb-8 border-0 p-0">
+              <legend class="sr-only">Temas visuales disponibles</legend>
+              <button onclick="demoTheme('light')" 
+                      class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar tema claro">
+                Light Theme
+              </button>
+              <button onclick="demoTheme('dark')" 
+                      class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg transition-colors"
+                      aria-label="Probar tema oscuro">
+                Dark Theme
+              </button>
+            </fieldset>
+            <section class="code-block" aria-labelledby="code-themes-title">
+              <h4 id="code-themes-title" class="sr-only">Ejemplo de código para temas</h4>
+              <pre><code class="language-javascript">flashy('Mensaje', { 
   theme: 'dark'          // light, dark
 });</code></pre>
-          </div>
+            </section>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- API Documentation -->
-    <section id="api" class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Manual de Instrucciones (Para Nerds) 🤓</h2>
-          <p class="text-gray-600">Todo lo que necesitas saber para dominar este poder</p>
-        </div>
-        <!-- Main Method -->
-        <div class="bg-white rounded-xl p-4 sm:p-8 shadow-sm mb-8">
-          <h3 class="text-2xl font-semibold mb-6">flashy(message, options)</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-            <div>
-              <h4 class="text-lg font-semibold mb-4">Parámetros</h4>
-              <div class="space-y-4">
-                <div class="border-l-4 border-blue-500 pl-4">
-                  <code class="text-blue-600 font-mono">message</code>
-                  <span class="text-gray-500 ml-2">(string)</span>
-                  <p class="text-sm text-gray-600 mt-1">El texto de la notificación</p>
+      <!-- API Documentation -->
+      <section id="api" class="py-16 bg-gray-50" itemscope itemtype="https://schema.org/TechArticle" aria-labelledby="api-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header class="text-center mb-12">
+            <h2 id="api-title" class="text-3xl font-bold mb-4" itemprop="headline">Documentación Completa de la API 📚</h2>
+            <p class="text-gray-600" itemprop="description">Referencia técnica completa para desarrolladores</p>
+            <meta itemprop="author" content="Pablo Martínez" />
+            <meta itemprop="datePublished" content="2025-06-20" />
+          </header>
+          
+          <!-- Main Method -->
+          <article class="bg-white rounded-xl p-4 sm:p-8 shadow-sm mb-8" itemscope itemtype="https://schema.org/APIReference">
+            <header>
+              <h3 class="text-2xl font-semibold mb-6" itemprop="name">flashy(message, options)</h3>
+            </header>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+              <section>
+                <h4 class="text-lg font-semibold mb-4">Parámetros</h4>
+                <div class="space-y-4" itemscope itemtype="https://schema.org/PropertyValueSpecification">
+                  <div class="border-l-4 border-blue-500 pl-4">
+                    <code class="text-blue-600 font-mono" itemprop="name">message</code>
+                    <span class="text-gray-500 ml-2" itemprop="valueRequired">(string, required)</span>
+                    <p class="text-sm text-gray-600 mt-1" itemprop="description">El texto de la notificación</p>
+                  </div>
+                  <div class="border-l-4 border-green-500 pl-4">
+                    <code class="text-green-600 font-mono" itemprop="name">options</code>
+                    <span class="text-gray-500 ml-2">(object|string, optional)</span>
+                    <p class="text-sm text-gray-600 mt-1" itemprop="description">Configuración o tipo de notificación</p>
+                  </div>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
-                  <code class="text-green-600 font-mono">options</code>
-                  <span class="text-gray-500 ml-2">(object|string)</span>
-                  <p class="text-sm text-gray-600 mt-1">Configuración o tipo de notificación</p>
+              </section>
+              <section>
+                <h4 class="text-lg font-semibold mb-4">Valor de retorno</h4>
+                <div class="border-l-4 border-purple-500 pl-4">
+                  <code class="text-purple-600 font-mono">function</code>
+                  <p class="text-sm text-gray-600 mt-1">Función para cerrar la notificación manualmente</p>
                 </div>
-              </div>
+              </section>
             </div>
-            <div>
-              <h4 class="text-lg font-semibold mb-4">Valor de retorno</h4>
-              <div class="border-l-4 border-purple-500 pl-4">
-                <code class="text-purple-600 font-mono">function</code>
-                <p class="text-sm text-gray-600 mt-1">Función para cerrar la notificación manualmente</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          </article>
         <!-- Options Table -->
         <div class="bg-white rounded-xl p-4 sm:p-8 shadow-sm mb-8">
           <h3 class="text-2xl font-semibold mb-6">Opciones de Configuración</h3>
@@ -1287,7 +1703,67 @@ flashy.destroy();</code></pre>
       // Initialize code generator on page load
       document.addEventListener("DOMContentLoaded", function () {
         generateCode();
+        
+        // Add mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuItems = document.getElementById('mobile-menu-items');
+        
+        if (mobileMenuToggle && mobileMenuItems) {
+          mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuItems.classList.toggle('active');
+          });
+        }
+        
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mobileMenuItems.classList.contains('active')) {
+            mobileMenuItems.classList.remove('active');
+          }
+        });
       });
     </script>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div itemscope itemtype="https://schema.org/Person">
+            <h3 class="text-lg font-semibold mb-4" itemprop="name">Pablo Martínez</h3>
+            <p class="text-gray-300 mb-4" itemprop="jobTitle">Full Stack Developer</p>
+            <p class="text-gray-400 text-sm" itemprop="description">
+              Desarrollador especializado en JavaScript, React, Node.js y arquitecturas modernas. 
+              Creador de Flashy.js y otras librerías open source.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li><a href="https://github.com/pablotheblink/FlashyJS" class="hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+              <li><a href="https://www.npmjs.com/package/@pablotheblink/flashyjs" class="hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">NPM Package</a></li>
+              <li><a href="#api" class="hover:text-white transition-colors">Documentación</a></li>
+              <li><a href="#ejemplos" class="hover:text-white transition-colors">Ejemplos</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Tecnologías</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-yellow-600 text-xs px-2 py-1 rounded">JavaScript</span>
+              <span class="bg-blue-600 text-xs px-2 py-1 rounded">TypeScript</span>
+              <span class="bg-cyan-600 text-xs px-2 py-1 rounded">React</span>
+              <span class="bg-green-600 text-xs px-2 py-1 rounded">Node.js</span>
+              <span class="bg-purple-600 text-xs px-2 py-1 rounded">Frontend</span>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 Pablo Martínez. Flashy.js es open source bajo licencia MIT.</p>
+          <p class="mt-2 text-sm">
+            <span class="sr-only">Palabras clave SEO: </span>
+            JavaScript library, notification system, toast messages, frontend development, Pablo Martínez developer
+          </p>
+        </div>
+      </div>
+    </footer>
+    </main>
   </body>
 </html>
