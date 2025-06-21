@@ -1762,19 +1762,26 @@ flashy.destroy();</code></pre>
       function initializeAds() {
         const adElements = document.querySelectorAll('.adsbygoogle');
         adElements.forEach((ad, index) => {
-          if (!ad.hasAttribute('data-ad-status')) {
-            window.adsbygoogle = window.adsbygoogle || [];
-            window.adsbygoogle.push({});
+          // Verificar si el anuncio ya ha sido inicializado
+          if (!ad.hasAttribute('data-adsbygoogle-status')) {
+            try {
+              window.adsbygoogle = window.adsbygoogle || [];
+              window.adsbygoogle.push({});
+            } catch (error) {
+              console.warn('Error al inicializar anuncio:', error);
+            }
           }
         });
       }
       
       // Esperar a que AdSense esté listo
+      let adsInitialized = false;
       function waitForAdSense() {
-        if (typeof window.adsbygoogle !== 'undefined') {
+        if (typeof window.adsbygoogle !== 'undefined' && !adsInitialized) {
+          adsInitialized = true;
           // Inicializar después de un pequeño delay
-          setTimeout(initializeAds, 1000);
-        } else {
+          setTimeout(initializeAds, 1500);
+        } else if (!adsInitialized) {
           setTimeout(waitForAdSense, 500);
         }
       }
