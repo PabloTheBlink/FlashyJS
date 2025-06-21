@@ -553,9 +553,6 @@
      data-ad-slot="2215980044"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
       <!-- Installation -->
       <section id="instalacion" class="py-16 bg-gray-50" itemscope itemtype="https://schema.org/HowTo" aria-labelledby="installation-title">
@@ -624,9 +621,6 @@ flashy('¡Instalado correctamente!', 'success');</code></pre>
      data-ad-slot="9902898374"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
       <!-- Examples -->
       <section id="ejemplos" class="py-16 bg-white" itemscope itemtype="https://schema.org/WebApplication" aria-labelledby="examples-title">
@@ -799,9 +793,6 @@ flashy('Mensaje', { type: 'error' });</code></pre>
      data-ad-slot="8997010814"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
       <!-- API Documentation -->
       <section id="api" class="py-16 bg-gray-50" itemscope itemtype="https://schema.org/TechArticle" aria-labelledby="api-title">
@@ -972,9 +963,6 @@ flashy.destroy();</code></pre>
      data-ad-slot="2004227056"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <!-- Code Generator -->
     <section id="generador" class="py-16 bg-white">
@@ -1108,9 +1096,6 @@ flashy.destroy();</code></pre>
      data-ad-slot="7683929140"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <!-- Testimonios y Opiniones -->
     <section id="testimonios" class="py-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
@@ -1332,9 +1317,6 @@ flashy.destroy();</code></pre>
      data-ad-slot="2709421176"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <!-- Contenido de la Comunidad -->
     <section id="contenido" class="py-16 bg-white">
@@ -1439,9 +1421,6 @@ flashy.destroy();</code></pre>
      data-ad-slot="4516492714"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
         <!-- Colaboración -->
     <section id="colaboracion" class="py-16 bg-gray-50">
@@ -1471,9 +1450,6 @@ flashy.destroy();</code></pre>
      data-ad-slot="5057765802"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <!-- Sección Sobre el Autor -->
     <section class="bg-gradient-to-br from-purple-50 to-indigo-100 py-16 md:py-20">
@@ -1780,8 +1756,39 @@ flashy.destroy();</code></pre>
         });
       });
 
+      window.adsbygoogle = window.adsbygoogle || [];
+      
+      // Función para inicializar anuncios después de que la página esté cargada
+      function initializeAds() {
+        const adElements = document.querySelectorAll('.adsbygoogle');
+        adElements.forEach((ad, index) => {
+          if (!ad.hasAttribute('data-ad-status')) {
+            try {
+              window.adsbygoogle = window.adsbygoogle || [];
+              window.adsbygoogle.push({});
+              console.log(`Anuncio ${index + 1} inicializado`);
+            } catch (e) {
+              console.error(`Error al inicializar anuncio ${index + 1}:`, e);
+            }
+          }
+        });
+      }
+      
+      // Esperar a que AdSense esté listo
+      function waitForAdSense() {
+        if (typeof window.adsbygoogle !== 'undefined') {
+          console.log('AdSense cargado correctamente');
+          // Inicializar después de un pequeño delay
+          setTimeout(initializeAds, 1000);
+        } else {
+          console.log('Esperando AdSense...');
+          setTimeout(waitForAdSense, 500);
+        }
+      }
+
       // Initialize code generator on page load
       document.addEventListener("DOMContentLoaded", function () {
+        waitForAdSense();
         generateCode();
         
         // Add mobile menu functionality
