@@ -22,7 +22,7 @@
     closable: true,
     animation: "slide",
     theme: "light",
-    icon: null,
+    icon: undefined,
     onClick: null,
     onClose: null,
   };
@@ -240,7 +240,7 @@
     const notification = document.createElement("div");
     notification.className = `flashy-notification ${config.type} ${config.theme} animate-${config.animation} ${config.position}`;
     let content = "";
-    const icon = config.icon || defaultIcons[config.type] || defaultIcons.default;
+    const icon = config.icon !== undefined ? config.icon : (defaultIcons[config.type] || defaultIcons.default);
     if (icon) {
       content += `<span class="flashy-icon">${icon}</span>`;
     }
