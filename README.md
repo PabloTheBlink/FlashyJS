@@ -138,7 +138,7 @@ Nuestras notificaciones son tan responsivas que se adaptan mejor que tú a los c
 ## Enlaces Útiles 🔗 (Para los curiosos)
 
 - **NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs (Donde vive la magia)
-- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js (Acceso directo al paraíso)
+- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js (Acceso directo al paraíso)
 - **GitHub**: https://github.com/pablotheblink/FlashyJS (El laboratorio secreto)
 
 ## Licencia 📄 (Lo legal y aburrido)
@@ -151,4 +151,4 @@ Pablo Martínez - El tipo que pensó que el mundo necesitaba notificaciones más
 
 ## Versión Actual 📌
 
-1.0.4 - "La que te va a enamorar" 💕
+1.0.5 - "Rediseño visual moderno" ✨

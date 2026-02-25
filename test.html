@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashyJS - Test Visual Redesign</title>
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --section-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    body.dark {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --section-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 { color: var(--text-primary); }
+    h2 { color: var(--text-secondary); margin-top: 40px; }
+    .test-section {
+      background: var(--bg-secondary);
+      padding: 24px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: var(--section-shadow);
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 4px;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    button:hover { background: #1d4ed8; }
+    button.success { background: #16a34a; }
+    button.success:hover { background: #15803d; }
+    button.error { background: #dc2626; }
+    button.error:hover { background: #b91c1c; }
+    button.warning { background: #d97706; }
+    button.warning:hover { background: #b45309; }
+    button.info { background: #0891b2; }
+    button.info:hover { background: #0e7490; }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10001;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Cambiar Tema</button>
+  
+  <h1>🔥 FlashyJS - Test Visual Redesign v1.0.5</h1>
+  <p>Prueba el nuevo diseño moderno inspirado en Linear, Vercel y shadcn/ui</p>
+
+  <div class="test-section">
+    <h2>Tipos de Notificaciones</h2>
+    <button onclick="flashy('Notificación básica con el nuevo diseño')">Default</button>
+    <button class="success" onclick="flashy.success('¡Operación completada con éxito! ✨')">Success</button>
+    <button class="error" onclick="flashy.error('Algo salió mal. Inténtalo de nuevo.')">Error</button>
+    <button class="warning" onclick="flashy.warning('Advertencia: Revisa este campo.')">Warning</button>
+    <button class="info" onclick="flashy.info('Información importante que debes conocer.')">Info</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Posiciones</h2>
+    <button onclick="showPosition('top-left')">Top Left</button>
+    <button onclick="showPosition('top-center')">Top Center</button>
+    <button onclick="showPosition('top-right')">Top Right</button>
+    <button onclick="showPosition('bottom-left')">Bottom Left</button>
+    <button onclick="showPosition('bottom-center')">Bottom Center</button>
+    <button onclick="showPosition('bottom-right')">Bottom Right</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Animaciones</h2>
+    <button onclick="showAnimation('slide')">Slide</button>
+    <button onclick="showAnimation('fade')">Fade</button>
+    <button onclick="showAnimation('bounce')">Bounce</button>
+    <button onclick="showAnimation('zoom')">Zoom</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Tema Oscuro</h2>
+    <button onclick="showDarkTheme()">Mostrar notificación dark</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Acciones</h2>
+    <button onclick="flashy.closeAll()">Cerrar todas</button>
+    <button onclick="flashy.destroy()">Destruir</button>
+  </div>
+
+  <script src="flashy.js"></script>
+  <script>
+    let currentTheme = 'light';
+
+    function toggleTheme() {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.body.classList.toggle('dark', currentTheme === 'dark');
+      flashy.setDefaults({ theme: currentTheme });
+      flashy.success(`Tema cambiado a ${currentTheme}`);
+    }
+
+    function showPosition(position) {
+      flashy.success(`Notificación en ${position}`, { position, theme: currentTheme });
+    }
+
+    function showAnimation(animation) {
+      flashy.info(`Animación ${animation}`, { animation, theme: currentTheme });
+    }
+
+    function showDarkTheme() {
+      flashy.success('¡Este es el tema oscuro! 🌙', { 
+        theme: 'dark',
+        position: 'top-center'
+      });
+    }
+
+    // Configurar defaults
+    flashy.setDefaults({
+      duration: 5000,
+      animation: 'slide'
+    });
+
+    // Mostrar bienvenida
+    setTimeout(() => {
+      flashy.success('¡Bienvenido al nuevo FlashyJS! 🎨✨');
+    }, 500);
+  </script>
+</body>
+</html>

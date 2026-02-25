@@ -1,6 +1,6 @@
 /**
  * Flashy.js - Librería de Notificaciones
- * @version 1.0.4
+ * @version 1.0.5
  * @author Pablo Martínez
  * @license MIT
  *
@@ -28,78 +28,245 @@
   };
 
   const styles = `
+          /* CSS Custom Properties for theming */
+          :root {
+              --flashy-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              --flashy-font-size: 14px;
+              --flashy-line-height: 1.5;
+              --flashy-border-radius: 12px;
+              --flashy-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+              --flashy-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+              --flashy-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+              --flashy-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+              --flashy-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+              --flashy-transition-duration: 0.2s;
+              /* Default theme (light) */
+              --flashy-bg-primary: #ffffff;
+              --flashy-bg-secondary: #f8fafc;
+              --flashy-text-primary: #0f172a;
+              --flashy-text-secondary: #475569;
+              --flashy-border: rgba(226, 232, 240, 0.8);
+              --flashy-success-bg: rgba(34, 197, 94, 0.08);
+              --flashy-success-border: rgba(34, 197, 94, 0.3);
+              --flashy-success-icon: #16a34a;
+              --flashy-error-bg: rgba(239, 68, 68, 0.08);
+              --flashy-error-border: rgba(239, 68, 68, 0.3);
+              --flashy-error-icon: #dc2626;
+              --flashy-warning-bg: rgba(245, 158, 11, 0.08);
+              --flashy-warning-border: rgba(245, 158, 11, 0.3);
+              --flashy-warning-icon: #d97706;
+              --flashy-info-bg: rgba(59, 130, 246, 0.08);
+              --flashy-info-border: rgba(59, 130, 246, 0.3);
+              --flashy-info-icon: #2563eb;
+              --flashy-default-bg: rgba(100, 116, 139, 0.08);
+              --flashy-default-border: rgba(100, 116, 139, 0.3);
+              --flashy-default-icon: #64748b;
+              --flashy-progress-bg: rgba(203, 213, 225, 0.5);
+          }
+
+          /* Light theme colors - applied to container */
+          .flashy-container.flashy-theme-light {
+              --flashy-bg-primary: #ffffff;
+              --flashy-bg-secondary: #f8fafc;
+              --flashy-text-primary: #0f172a;
+              --flashy-text-secondary: #475569;
+              --flashy-border: rgba(226, 232, 240, 0.8);
+              --flashy-success-bg: rgba(34, 197, 94, 0.08);
+              --flashy-success-border: rgba(34, 197, 94, 0.3);
+              --flashy-success-icon: #16a34a;
+              --flashy-error-bg: rgba(239, 68, 68, 0.08);
+              --flashy-error-border: rgba(239, 68, 68, 0.3);
+              --flashy-error-icon: #dc2626;
+              --flashy-warning-bg: rgba(245, 158, 11, 0.08);
+              --flashy-warning-border: rgba(245, 158, 11, 0.3);
+              --flashy-warning-icon: #d97706;
+              --flashy-info-bg: rgba(59, 130, 246, 0.08);
+              --flashy-info-border: rgba(59, 130, 246, 0.3);
+              --flashy-info-icon: #2563eb;
+              --flashy-default-bg: rgba(100, 116, 139, 0.08);
+              --flashy-default-border: rgba(100, 116, 139, 0.3);
+              --flashy-default-icon: #64748b;
+              --flashy-progress-bg: rgba(203, 213, 225, 0.5);
+          }
+
+          /* Dark theme colors - applied to container */
+          .flashy-container.flashy-theme-dark {
+              --flashy-bg-primary: #1e293b;
+              --flashy-bg-secondary: #0f172a;
+              --flashy-text-primary: #f1f5f9;
+              --flashy-text-secondary: #94a3b8;
+              --flashy-border: rgba(51, 65, 85, 0.8);
+              --flashy-success-bg: rgba(34, 197, 94, 0.15);
+              --flashy-success-border: rgba(34, 197, 94, 0.4);
+              --flashy-success-icon: #4ade80;
+              --flashy-error-bg: rgba(239, 68, 68, 0.15);
+              --flashy-error-border: rgba(239, 68, 68, 0.4);
+              --flashy-error-icon: #f87171;
+              --flashy-warning-bg: rgba(245, 158, 11, 0.15);
+              --flashy-warning-border: rgba(245, 158, 11, 0.4);
+              --flashy-warning-icon: #fbbf24;
+              --flashy-info-bg: rgba(59, 130, 246, 0.15);
+              --flashy-info-border: rgba(59, 130, 246, 0.4);
+              --flashy-info-icon: #60a5fa;
+              --flashy-default-bg: rgba(148, 163, 184, 0.15);
+              --flashy-default-border: rgba(148, 163, 184, 0.4);
+              --flashy-default-icon: #94a3b8;
+              --flashy-progress-bg: rgba(71, 85, 105, 0.5);
+          }
+
           .flashy-container {
               position: fixed;
               z-index: 10000;
               pointer-events: none;
           }
-          .flashy-container.top-left { top: 20px; left: 20px; }
-          .flashy-container.top-center { top: 20px; left: 50%; transform: translateX(-50%); }
-          .flashy-container.top-right { top: 20px; right: 20px; }
-          .flashy-container.bottom-left { bottom: 20px; left: 20px; }
-          .flashy-container.bottom-center { bottom: 20px; left: 50%; transform: translateX(-50%); }
-          .flashy-container.bottom-right { bottom: 20px; right: 20px; }
+          .flashy-container.top-left { top: 16px; left: 16px; }
+          .flashy-container.top-center { top: 16px; left: 50%; transform: translateX(-50%); }
+          .flashy-container.top-right { top: 16px; right: 16px; }
+          .flashy-container.bottom-left { bottom: 16px; left: 16px; }
+          .flashy-container.bottom-center { bottom: 16px; left: 50%; transform: translateX(-50%); }
+          .flashy-container.bottom-right { bottom: 16px; right: 16px; }
           .flashy-notification {
               display: flex;
-              align-items: center;
-              min-width: 300px;
-              max-width: 500px;
+              align-items: flex-start;
+              min-width: 320px;
+              max-width: 480px;
               margin: 8px 0;
-              padding: 16px 20px;
-              border-radius: 8px;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-              font-size: 14px;
-              line-height: 1.4;
+              padding: 14px 16px;
+              border-radius: var(--flashy-border-radius);
+              font-family: var(--flashy-font-family);
+              font-size: var(--flashy-font-size);
+              line-height: var(--flashy-line-height);
               pointer-events: auto;
               cursor: pointer;
-              border-left: 4px solid;
               position: relative;
               overflow: hidden;
               opacity: 0;
+              border: 1px solid var(--flashy-border);
+              backdrop-filter: blur(8px);
+              -webkit-backdrop-filter: blur(8px);
+              transition: transform var(--flashy-transition-duration) var(--flashy-transition-timing),
+                          box-shadow var(--flashy-transition-duration) var(--flashy-transition-timing),
+                          opacity var(--flashy-transition-duration) var(--flashy-transition-timing);
           }
           .flashy-notification:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              box-shadow: var(--flashy-shadow-xl);
           }
-          .flashy-notification.light { background: #ffffff; color: #333333; }
-          .flashy-notification.dark { background: #2d3748; color: #e2e8f0; }
-          .flashy-notification.success { border-left-color: #4CAF50; }
-          .flashy-notification.error { border-left-color: #f44336; }
-          .flashy-notification.warning { border-left-color: #ff9800; }
-          .flashy-notification.info { border-left-color: #2196F3; }
-          .flashy-notification.default { border-left-color: #607d8b; }
-          .flashy-notification.success.light { background: #f1f8e9; }
-          .flashy-notification.error.light { background: #ffebee; }
-          .flashy-notification.warning.light { background: #fff3e0; }
-          .flashy-notification.info.light { background: #e3f2fd; }
-          .flashy-icon { font-size: 18px; margin-right: 12px; flex-shrink: 0; }
-          .flashy-content { flex: 1; word-wrap: break-word; }
+          .flashy-notification.light {
+              background: var(--flashy-bg-primary);
+              color: var(--flashy-text-primary);
+              box-shadow: var(--flashy-shadow-lg);
+          }
+          .flashy-notification.dark {
+              background: var(--flashy-bg-primary);
+              color: var(--flashy-text-primary);
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+          }
+          .flashy-notification.success.light {
+              background: var(--flashy-success-bg);
+              border-color: var(--flashy-success-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.success.dark {
+              background: var(--flashy-success-bg);
+              border-color: var(--flashy-success-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.error.light {
+              background: var(--flashy-error-bg);
+              border-color: var(--flashy-error-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.error.dark {
+              background: var(--flashy-error-bg);
+              border-color: var(--flashy-error-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.warning.light {
+              background: var(--flashy-warning-bg);
+              border-color: var(--flashy-warning-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.warning.dark {
+              background: var(--flashy-warning-bg);
+              border-color: var(--flashy-warning-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.info.light {
+              background: var(--flashy-info-bg);
+              border-color: var(--flashy-info-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.info.dark {
+              background: var(--flashy-info-bg);
+              border-color: var(--flashy-info-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.default.light {
+              background: var(--flashy-default-bg);
+              border-color: var(--flashy-default-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-notification.default.dark {
+              background: var(--flashy-default-bg);
+              border-color: var(--flashy-default-border);
+              color: var(--flashy-text-primary);
+          }
+          .flashy-icon {
+              flex-shrink: 0;
+              width: 20px;
+              height: 20px;
+              margin-right: 12px;
+              margin-top: 1px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+          .flashy-icon svg {
+              width: 100%;
+              height: 100%;
+          }
+          .flashy-notification.success .flashy-icon { color: var(--flashy-success-icon); }
+          .flashy-notification.error .flashy-icon { color: var(--flashy-error-icon); }
+          .flashy-notification.warning .flashy-icon { color: var(--flashy-warning-icon); }
+          .flashy-notification.info .flashy-icon { color: var(--flashy-info-icon); }
+          .flashy-notification.default .flashy-icon { color: var(--flashy-default-icon); }
+          .flashy-content {
+              flex: 1;
+              word-wrap: break-word;
+              color: inherit;
+          }
           .flashy-close {
-              background: none;
+              background: transparent;
               border: none;
-              font-size: 18px;
               cursor: pointer;
               margin-left: 12px;
-              opacity: 0.7;
-              transition: opacity 0.2s;
               padding: 0;
               width: 20px;
               height: 20px;
               display: flex;
               align-items: center;
               justify-content: center;
-              color: inherit;
+              border-radius: 4px;
+              color: var(--flashy-text-secondary);
+              opacity: 0.6;
+              transition: opacity 0.15s var(--flashy-transition-timing),
+                          background-color 0.15s var(--flashy-transition-timing),
+                          color 0.15s var(--flashy-transition-timing);
+              flex-shrink: 0;
           }
-          .flashy-close:hover { opacity: 1; }
+          .flashy-close:hover {
+              opacity: 1;
+              background: rgba(148, 163, 184, 0.15);
+              color: var(--flashy-text-primary);
+          }
           .flashy-progress {
               position: absolute;
               bottom: 0;
               left: 0;
-              height: 3px;
-              background: rgba(0, 0, 0, 0.2);
+              height: 2px;
+              background: var(--flashy-progress-bg);
               transition: width linear;
+              border-radius: 0 0 0 var(--flashy-border-radius);
           }
           @keyframes flashy-slide-in-right {
               from { transform: translateX(100%); opacity: 0; }
@@ -122,47 +289,44 @@
               to { opacity: 1; }
           }
           @keyframes flashy-bounce-in {
-              0% { transform: scale(0.3); opacity: 0; }
-              50% { transform: scale(1.05); opacity: 0.8; }
-              70% { transform: scale(0.9); opacity: 0.9; }
+              0% { transform: scale(0.95); opacity: 0; }
+              50% { transform: scale(1.01); opacity: 0.9; }
               100% { transform: scale(1); opacity: 1; }
           }
           @keyframes flashy-zoom-in {
-              0% { transform: scale(0); opacity: 0; }
-              50% { transform: scale(1.1); opacity: 0.8; }
+              0% { transform: scale(0.98); opacity: 0; }
               100% { transform: scale(1); opacity: 1; }
           }
           @keyframes flashy-exit {
-              from { opacity: 1; }
-              to { opacity: 0; }
+              from { opacity: 1; transform: scale(1); }
+              to { opacity: 0; transform: scale(0.98); }
           }
-          .flashy-notification.animate-slide.top-left { animation: flashy-slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-slide.top-center { animation: flashy-slide-in-top 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-slide.top-right { animation: flashy-slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-slide.bottom-left { animation: flashy-slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-slide.bottom-center { animation: flashy-slide-in-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-slide.bottom-right { animation: flashy-slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-fade { animation: flashy-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-bounce { animation: flashy-bounce-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.animate-zoom { animation: flashy-zoom-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-          .flashy-notification.removing { animation: flashy-exit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+          .flashy-notification.animate-slide.top-left { animation: flashy-slide-in-left 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-slide.top-center { animation: flashy-slide-in-top 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-slide.top-right { animation: flashy-slide-in-right 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-slide.bottom-left { animation: flashy-slide-in-left 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-slide.bottom-center { animation: flashy-slide-in-bottom 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-slide.bottom-right { animation: flashy-slide-in-right 0.25s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-fade { animation: flashy-fade-in 0.2s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-bounce { animation: flashy-bounce-in 0.3s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.animate-zoom { animation: flashy-zoom-in 0.15s var(--flashy-transition-timing) forwards; }
+          .flashy-notification.removing { animation: flashy-exit 0.2s var(--flashy-transition-timing) forwards; }
           @media (max-width: 768px) {
               .flashy-notification {
                   min-width: 280px;
-                  max-width: calc(100vw - 40px);
+                  max-width: calc(100vw - 32px);
                   margin: 6px 0;
-                  padding: 12px 16px;
-                  font-size: 13px;
+                  padding: 12px 14px;
               }
               .flashy-container {
-                  left: 20px !important;
-                  right: 20px !important;
+                  left: 16px !important;
+                  right: 16px !important;
                   transform: none !important;
               }
               .flashy-container.top-center,
               .flashy-container.bottom-center {
-                  left: 20px !important;
-                  right: 20px !important;
+                  left: 16px !important;
+                  right: 16px !important;
               }
           }
       `;
@@ -187,12 +351,16 @@
     stylesInjected = true;
   }
 
-  function getContainer(position) {
+  function getContainer(position, theme) {
     if (typeof document === "undefined") return null;
     if (!containers[position]) {
       containers[position] = document.createElement("div");
-      containers[position].className = `flashy-container ${position}`;
+      containers[position].className = `flashy-container ${position} flashy-theme-${theme}`;
       document.body.appendChild(containers[position]);
+    } else {
+      // Update theme class if changed
+      containers[position].classList.remove('flashy-theme-light', 'flashy-theme-dark');
+      containers[position].classList.add(`flashy-theme-${theme}`);
     }
     return containers[position];
   }
@@ -253,7 +421,7 @@
       content += `<div class="flashy-progress"></div>`;
     }
     notification.innerHTML = content;
-    const container = getContainer(config.position);
+    const container = getContainer(config.position, config.theme);
     if (!container) {
       console.warn("Flashy: No se pudo crear el contenedor");
       return () => {};
@@ -402,7 +570,7 @@
   flashy.warning = (message, options = {}) => flashy(message, { ...options, type: "warning" });
   flashy.info = (message, options = {}) => flashy(message, { ...options, type: "info" });
 
-  flashy.version = "1.0.4";
+  flashy.version = "1.0.5";
 
   return flashy;
 });
