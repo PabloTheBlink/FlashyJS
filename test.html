@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FlashyJS - Test Visual Redesign</title>
+  <title>FlashyJS 2.0 - Prueba visual</title>
   <style>
     :root {
       --bg-primary: #f8fafc;
@@ -68,8 +68,8 @@
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">🌓 Cambiar Tema</button>
   
-  <h1>🔥 FlashyJS - Test Visual Redesign v1.0.5</h1>
-  <p>Prueba el nuevo diseño moderno inspirado en Linear, Vercel y shadcn/ui</p>
+  <h1>🔥 FlashyJS 2.0 - Prueba visual</h1>
+  <p>Prueba la pila, las promesas, el tema automático y la API clásica.</p>
 
   <div class="test-section">
     <h2>Tipos de Notificaciones</h2>
@@ -104,6 +104,15 @@
   </div>
 
   <div class="test-section">
+    <h2>Novedades 2.0</h2>
+    <button onclick="showStack()">Crear pila de 5</button>
+    <button onclick="showPromise(false)">Promesa correcta</button>
+    <button onclick="showPromise(true)">Promesa fallida</button>
+    <button onclick="flashy.setDefaults({ theme: 'auto' }); flashy.info('Tema automático')">Tema auto</button>
+    <p>Pasa el ratón por la pila o tócala para expandirla. Pulsa Escape para cerrar el toast más reciente.</p>
+  </div>
+
+  <div class="test-section">
     <h2>Acciones</h2>
     <button onclick="flashy.closeAll()">Cerrar todas</button>
     <button onclick="flashy.destroy()">Destruir</button>
@@ -133,6 +142,21 @@
         theme: 'dark',
         position: 'top-center'
       });
+    }
+
+    function showStack() {
+      flashy.setDefaults({ visibleToasts: 3 });
+      for (let i = 1; i <= 5; i++) flashy.info(`Notificación ${i}`, { duration: 10000 });
+    }
+
+    function showPromise(shouldFail) {
+      flashy.promise(() => new Promise((resolve, reject) => {
+        setTimeout(() => shouldFail ? reject(new Error('Error de prueba')) : resolve('Guardado'), 1000);
+      }), {
+        loading: 'Guardando…',
+        success: value => value,
+        error: error => error.message,
+      }).catch(() => {});
     }
 
     // Configurar defaults

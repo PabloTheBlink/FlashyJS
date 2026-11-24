@@ -1,20 +1,25 @@
 {
   "name": "@pablotheblink/flashyjs",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Una librería moderna de notificaciones para JavaScript - ligera, elegante y fácil de usar",
-  "main": "flashy.js",
-  "module": "flashy.js",
-  "browser": "flashy.js",
-  "types": "flashy.d.ts",
+  "main": "./dist/flashy.cjs",
+  "module": "./dist/flashy.mjs",
+  "browser": "./dist/flashy.umd.min.js",
+  "types": "./flashy.d.ts",
   "files": [
     "flashy.js",
     "flashy.d.ts",
-    "README.md"
+    "react.js",
+    "react.mjs",
+    "react.d.ts",
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 0",
-    "prepublishOnly": "echo \"Preparando para publicar...\"",
-    "build": "echo \"Build completado\""
+    "test": "node --test test/*.test.cjs",
+    "build": "node build.mjs",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "keywords": [
     "notifications",
@@ -36,13 +41,39 @@
   "bugs": {
     "url": "https://github.com/pablotheblink/FlashyJS/issues"
   },
-  "homepage": "https://github.com/pablotheblink/FlashyJS#readme",
+  "homepage": "https://flashyjs.pablomsj.com",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=18.0.0"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./flashy.d.ts",
+      "import": "./dist/flashy.mjs",
+      "require": "./dist/flashy.cjs",
+      "default": "./dist/flashy.umd.min.js"
+    },
+    "./react": {
+      "types": "./react.d.ts",
+      "import": "./react.mjs",
+      "require": "./react.js"
+    },
+    "./flashy.js": "./flashy.js",
+    "./dist/flashy.umd.min.js": "./dist/flashy.umd.min.js"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
 }

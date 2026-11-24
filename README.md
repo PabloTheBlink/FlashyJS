@@ -1,154 +1,143 @@
-# Flashy.js 🔥💥
+# FlashyJS 🔥
 
-¿Cansado de notificaciones aburridas que parecen de los 90s? ¡Flashy.js llegó para revolucionar tu vida! 😎
+Notificaciones ligeras para JavaScript: vanilla, cero dependencias en el núcleo y API directa. La **[web oficial](https://flashyjs.pablomsj.com)** incluye la demo en vivo, el playground y código copiable. `demo.html` es una vista local de desarrollo.
 
-Una librería de notificaciones tan elegante que hasta tu ex se va a poner celosa. 💅✨
-
-## ¿Por qué Flashy.js es tan genial? 🤩
-
-- 🎨 Múltiples tipos de notificaciones (porque la vida no es solo success o error, ¿verdad?)
-- 🎯 6 posiciones diferentes (como un sniper de notificaciones)
-- 🎭 4 animaciones que harán que tus usuarios se enamoren
-- 🌓 Temas claro y oscuro (para todos los vampiros programadores)
-- 📱 Responsive como tú después del café
-- ⏱️ Barra de progreso que es más puntual que tu jefe
-- 🔄 Más personalizable que tu perfil de dating
-- 🎯 Callbacks para cuando quieras ser stalker de tus notificaciones
-- 🚀 Sin dependencias (independiente como deberías ser tú)
-
-## Instalación 📦 (Más fácil que ligarse a alguien en una app)
-
-### NPM (Para los pros)
+## Instalación
 
 ```bash
 npm install @pablotheblink/flashyjs
 ```
 
-### Yarn (Para los hipsters)
+```js
+import flashy from '@pablotheblink/flashyjs';
 
-```bash
-yarn add @pablotheblink/flashyjs
+flashy('Hola');
+flashy.success('Guardado');
+flashy.error('Algo salió mal');
+flashy.warning('Revisa los datos');
+flashy.info('Hay novedades');
 ```
 
-### CDN (Para los que viven al límite)
+CommonJS: `const flashy = require('@pablotheblink/flashyjs')`. Para un `<script>` clásico usa `https://unpkg.com/@pablotheblink/flashyjs@2.0.0/dist/flashy.umd.min.js` y llama a `window.flashy(...)`. También sigue disponible `flashy.js` para páginas que ya lo cargan directamente.
 
-```html
-<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
-```
+## What's new in 2.0
 
-## Uso Básico 🚀 (Tan simple que tu mascota podría hacerlo)
+- Entrada con rebote suave, pila con profundidad 3D, expansión al hover y descarte con gesto horizontal e inercia.
+- `flashy.promise()` conserva el mismo aviso: el aro de carga se transforma en check o cruz.
+- Temas `light`, `dark` y `auto`; `glass` sutil, `midnight` oscuro liso y `aurora` conservado como superficie pizarra lisa por compatibilidad.
+- Descripción, imagen o avatar y botón de acción con callback.
+- [Demo jugable](https://flashyjs.pablomsj.com) en la web oficial. `demo.html` se usa solo durante el desarrollo.
 
-### ES Modules (Moderno y sexy)
+### Un aviso para compartir
 
-```javascript
-import flashy from "@pablotheblink/flashyjs";
-
-flashy("¡Hola Mundo Cruel!"); // Con actitud 😈
-```
-
-### CommonJS (Clásico pero efectivo)
-
-```javascript
-const flashy = require("@pablotheblink/flashyjs");
-
-flashy("¡Saludos terrícolas!"); // Feeling alien 👽
-```
-
-### Script Global (Old school pero con estilo)
-
-```html
-<script src="https://unpkg.com/@pablotheblink/flashyjs@1.0.4/flashy.js"></script>
-<script>
-  window.flashy("¡El show debe continuar!"); // Drama queen mode 🎭
-</script>
-```
-
-## Tipos de Notificaciones 🎨 (Para todas las personalidades)
-
-```javascript
-// Notificación básica (para los tímidos)
-flashy("Mensaje básico... o no tan básico 🤫");
-
-// Notificación de éxito (celebra como si fuera viernes)
-flashy.success("¡Lo lograste, crack! 🎉");
-
-// Notificación de error (la vida no siempre es color de rosa)
-flashy.error("¡Ups! Alguien la regó 💩");
-
-// Notificación de advertencia (tu conciencia hablando)
-flashy.warning("¡Ojo al piojo! 👁️");
-
-// Notificación informativa (el sabelotodo del grupo)
-flashy.info("Dato curioso que nadie pidió 🤓");
-```
-
-## Configuración Avanzada ⚙️ (Para los perfeccionistas obsesivos)
-
-```javascript
-flashy("Soy una notificación con actitud", {
-  type: "success", // Porque merezco celebrar
-  position: "top-right", // La esquina VIP
-  duration: 4000, // 4 segundos de gloria
-  closable: true, // Por si te aburres de mí
-  animation: "slide", // Entrada triunfal
-  theme: "dark", // Porque soy misterioso
-  icon: "🔥", // Calentito como mi personalidad
-  onClick: () => console.log("¡Me tocaste! 😏"), // Interacción picante
-  onClose: () => console.log("Adiós cruel mundo 😢"), // Drama hasta el final
+```js
+flashy.success('Tu archivo está listo', {
+  theme: 'dark',
+  description: 'Se ha guardado correctamente.',
+  image: '/avatar.jpg',
+  imageAlt: 'Foto de Ana',
+  action: { label: 'Deshacer', onClick: () => restoreFile() },
 });
 ```
 
-## Configuración Global 🌍 (Porque eres el jefe de tu código)
+La descripción es texto plano, igual que el título. `image` acepta una URL; usa `imageAlt` si la imagen aporta información y una cadena vacía si es decorativa. La acción es un botón real y su callback no dispara `onClick` del aviso.
 
-```javascript
-// Establece las reglas del juego
-flashy.setDefaults({
-  duration: 5000, // 5 segundos de fama
-  position: "bottom-right", // Mi lugar favorito
-  theme: "dark", // Lado oscuro activado
+### Promesas
+
+`flashy.promise` muestra un único toast: cargando → éxito o error. Devuelve una promesa que conserva el resultado o el rechazo original.
+
+```js
+await flashy.promise(() => fetch('/api/save').then(r => {
+  if (!r.ok) throw new Error('No se pudo guardar');
+  return r.json();
+}), {
+  loading: 'Guardando…',
+  success: data => `Guardado #${data.id}`,
+  error: error => error.message,
 });
-
-// Espía las opciones actuales (stalker mode)
-const options = flashy.getOptions();
 ```
 
-## Métodos de Control 🛠️ (El poder en tus manos)
+`success` y `error` también aceptan cadenas. El toast de carga no se cierra por tiempo; el estado final usa la duración global.
 
-```javascript
-// Silencia a todas las notificaciones (dictador mode)
-flashy.closeAll();
+### Pila, tiempos y accesibilidad
 
-// Destruye todo y desaparece sin dejar rastro (ninja mode)
-flashy.destroy();
+Los toasts se apilan por posición con escala, profundidad y sombra. Al pasar el ratón o tocar la pila, esta se expande. Arrastra un aviso con ratón o dedo hacia un lado para descartarlo: cuenta la distancia o la velocidad del gesto. `visibleToasts` fija cuántos quedan visibles; los más antiguos se ocultan. Los temporizadores se pausan al pasar el ratón por la pila y cuando la pestaña pierde visibilidad. Escape cierra el toast visible más reciente.
+
+```js
+flashy.setDefaults({ position: 'top-right', visibleToasts: 3, duration: 4000 });
+flashy.success('Listo', { duration: 6000 });
 ```
 
-## Personalización de Estilos 🎨 (Hazlo tuyo, tigre)
+Los estados normales usan `role="status"` y los errores y avisos usan `role="alert"`, con `aria-live` acorde. FlashyJS no mueve el foco y respeta `prefers-reduced-motion`; el movimiento se elimina sin ocultar el contenido.
+
+### Tema y personalización
+
+```js
+flashy.setDefaults({ theme: 'glass' });
+flashy('Cristal', { theme: 'glass' });
+flashy('Pizarra', { theme: 'aurora' }); // alias compatible sin degradados
+flashy('Medianoche', { theme: 'midnight' });
+// También: light, dark, auto
+```
 
 ```css
-.flashy-notification {
-  /* Aquí va tu creatividad desbordante */
-  /* Haz que brillen más que tu futuro */
+:root {
+  --flashy-light-bg: #fffdf8;
+  --flashy-dark-bg: #171717;
+  --flashy-success: #00875a;
+  --flashy-border-radius: 8px;
+  --flashy-gap: 12px;
 }
 ```
 
-## Soporte Móvil 📱 (Porque también los smartphones merecen amor)
+Variables públicas en `:root` o en un contenedor específico:
 
-Nuestras notificaciones son tan responsivas que se adaptan mejor que tú a los cambios de la vida. 💪
+| Variable | Uso |
+| --- | --- |
+| `--flashy-light-bg`, `--flashy-light-text`, `--flashy-light-border` | Superficie, texto y borde del tema claro. |
+| `--flashy-dark-bg`, `--flashy-dark-text`, `--flashy-dark-border` | Equivalentes del tema oscuro y `auto` oscuro. |
+| `--flashy-glass-bg`, `--flashy-glass-text`, `--flashy-glass-border` | Cristal esmerilado y borde de luz. |
+| `--flashy-aurora-bg`, `--flashy-aurora-text` | Base y texto de la superficie pizarra. |
+| `--flashy-midnight-bg`, `--flashy-midnight-text` | Base y texto del tema medianoche. |
+| `--flashy-success`, `--flashy-error`, `--flashy-warning`, `--flashy-info`, `--flashy-default` | Acento de cada tipo. |
+| `--flashy-font-family`, `--flashy-font-size` | Tipografía. |
+| `--flashy-border-radius`, `--flashy-gap`, `--flashy-shadow`, `--flashy-action-bg` | Forma, separación, sombra y fondo de acción. |
 
-## Enlaces Útiles 🔗 (Para los curiosos)
+El botón de acción usa el acento del tipo; `glass` aplica un desenfoque leve y un borde fino.
 
-- **NPM**: https://www.npmjs.com/package/@pablotheblink/flashyjs (Donde vive la magia)
-- **CDN**: https://unpkg.com/@pablotheblink/flashyjs@1.0.5/flashy.js (Acceso directo al paraíso)
-- **GitHub**: https://github.com/pablotheblink/FlashyJS (El laboratorio secreto)
+### React opcional
 
-## Licencia 📄 (Lo legal y aburrido)
+React no forma parte del núcleo. Si usas React, instálalo en tu aplicación y usa la entrada separada:
 
-MIT License - Básicamente puedes hacer lo que quieras, pero no nos culpes si te vuelves adicto.
+```jsx
+import { Toaster, useFlashy } from '@pablotheblink/flashyjs/react';
 
-## El Genio Detrás de la Locura 👨‍💻
+function SaveButton() {
+  const flashy = useFlashy();
+  return <button onClick={() => flashy.success('Guardado')}>Guardar</button>;
+}
 
-Pablo Martínez - El tipo que pensó que el mundo necesitaba notificaciones más sexys.
+function App() {
+  return <><Toaster theme="auto" visibleToasts={4} /><SaveButton /></>;
+}
+```
 
-## Versión Actual 📌
+`<Toaster/>` configura los valores globales; el núcleo crea el contenedor al mostrar el primer toast. Monta un solo `<Toaster/>` por aplicación.
 
-1.0.5 - "Rediseño visual moderno" ✨
+## API 1.x conservada
+
+La llamada `flashy(message, options?)`, las abreviaturas `success/error/warning/info`, la función de cierre que devuelve cada llamada, `closeAll`, `setDefaults`, `getOptions`, `destroy`, posiciones, animaciones, callbacks, iconos y la entrada global siguen disponibles. `options` puede ser una cadena de tipo como antes.
+
+El empaquetado cambia: los imports ESM usan `dist/flashy.mjs`, CommonJS usa `dist/flashy.cjs` y el script CDN recomendado usa el UMD minificado. El fichero `flashy.js` se conserva para enlaces directos existentes. La versión mínima de Node para herramientas y exports modernos es 18; el núcleo del navegador no necesita Node.
+
+## Desarrollo
+
+```bash
+npm install
+npm run build
+npm test
+```
+
+El build crea ESM, CJS y UMD minificado en `dist/` e informa del tamaño gzip. Las pruebas usan `node:test` y un DOM ligero local.
+
+Licencia MIT · [GitHub](https://github.com/pablotheblink/FlashyJS)

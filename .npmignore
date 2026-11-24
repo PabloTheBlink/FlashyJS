@@ -1,4 +1,5 @@
-index.html
+demo.html
+demo.js
 .git
 .gitignore
 .DS_Store
@@ -7,7 +8,6 @@ node_modules/
 .env
 .vscode/
 .idea/
-dist/
 build/
 coverage/
 .nyc_output/
